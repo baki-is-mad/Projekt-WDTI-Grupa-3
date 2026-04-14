@@ -1,0 +1,318 @@
+﻿/* =========================================
+   1. RESET I USTAWIENIA OGÓLNE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5; /* Poprawione z 1 dla lepszej czytelności */
+    color: #3f2a1e;
+    background: #f8f1e3;
+}
+
+section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #5c4033;
+}
+
+/* =========================================
+   2. NAWIGACJA (HEADER)
+========================================= */
+header {
+    background: #5c4032;
+    color: #f8f1e3;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    background: #5c4032;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* Ustawia logo nad menu */
+    align-items: center; /* Środkuje w poziomie */
+    gap: 1rem; /* Odstęp między logo a linkami */
+}
+
+.logo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+    .logo span {
+        font-size: 1.1rem;
+        font-weight: normal;
+        display: block;
+        opacity: 0.9;
+    }
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    justify-content: center; /* Środkuje linki względem siebie */
+}
+
+    .nav-links a {
+        color: #f8f1e3;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517953405523-5b9d8d6c3f9e?q=80&w=2070') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 160px 20px;
+}
+
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+    }
+
+/* =========================================
+   4. PRODUKTY I KATEGORIE
+========================================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+    .product-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+.product-info {
+    padding: 1.2rem;
+}
+
+    .product-info h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5c4033;
+    margin: 0.8rem 0;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.category {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Przycisk uniwersalny */
+.btn {
+    display: inline-block;
+    background: #5c4033;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background: #3f2a1e;
+    }
+
+/* =========================================
+   5. SEKCJA KONTAKT (FORMULARZ)
+========================================= */
+#kontakt {
+    padding: 60px 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f1e3;
+}
+
+    #kontakt form {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(63, 42, 30, 0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+
+    #kontakt label {
+        display: block;
+        margin-bottom: 8px;
+        color: #5c4032;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    #kontakt input,
+    #kontakt select,
+    #kontakt textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 25px;
+        border: 2px solid #eeebe6;
+        border-radius: 8px;
+        background-color: #faf9f7;
+        font-family: inherit;
+        font-size: 1rem;
+        color: #3f2a1e;
+        transition: all 0.3s ease;
+    }
+
+        #kontakt input:focus,
+        #kontakt select:focus,
+        #kontakt textarea:focus {
+            outline: none;
+            border-color: #5c4032;
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(92, 64, 50, 0.2);
+        }
+
+    #kontakt button {
+        width: 100%;
+        padding: 15px;
+        background-color: #5c4032;
+        color: #f8f1e3;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+        #kontakt button:hover {
+            background-color: #3f2a1e;
+        }
+
+        #kontakt button:active {
+            transform: scale(0.98);
+        }
+
+/* =========================================
+   6. STOPKA
+========================================= */
+footer {
+    background: #000000;
+    color: #f8f1e3;
+    padding: 3rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin: 1.5rem 0;
+}
+
+    .footer-links a {
+        color: #f8f1e3;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+/* =========================================
+   7. IKONY I MEDIA QUERIES (RESPONSYWNOŚĆ)
+========================================= */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Przykład Media Queries dla telefonów */
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    #kontakt form {
+        padding: 20px;
+    }
+}
