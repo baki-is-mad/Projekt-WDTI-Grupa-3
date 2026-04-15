@@ -27,6 +27,13 @@ h2 {
     color: #5c4033;
 }
 
+h3 {
+    color: #5c4033;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
 /* =========================================
    2. NAWIGACJA (HEADER)
 ========================================= */
