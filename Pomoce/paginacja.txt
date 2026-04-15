@@ -1,0 +1,29 @@
+html
+
+<!-- Paginacja -->
+            <div class="pagination">
+                <span><</span>
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>></span>
+            </div>
+
+
+css
+
+        .pagination {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .pagination span, .pagination a {
+            display: inline-block;
+            padding: 8px 14px;
+            margin: 0 3px;
+            border: 1px solid #ddd;
+        }
+        .pagination .active {
+            background: #351b03;
+            color: white;
+            border-color: #351b03;
