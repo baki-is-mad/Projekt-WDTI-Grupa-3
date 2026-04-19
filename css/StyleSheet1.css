@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
 
 body {
     font-family: system-ui, -apple-system, sans-serif;
@@ -90,7 +90,34 @@ nav {
             text-decoration: underline;
             opacity: 0.8;
         }
-
+nav2 {
+    background: #815a47;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* Ustawia logo nad menu */
+    align-items: center; /* Środkuje w poziomie */
+    gap: 1rem; /* Odstęp między logo a linkami */
+}
+.nav-links2 {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+}
+    .nav-links2 a {
+        color: #f8f1e3;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+        .nav-links2 a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
 /* =========================================
    3. HERO SECTION
 ========================================= */
@@ -115,12 +142,29 @@ nav {
 /* =========================================
    4. PRODUKTY I KATEGORIE
 ========================================= */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.slider-wrapper{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
+.products-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    gap: 2rem;
+    /*Przewijanie*/
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    /*Ukrycie paska przewijania*/
+    scrollbar-width: none;
+    padding: 20px 5px;
+}
+.products-grid::-webkit-scrollbar {
+    display: none;
+}
 .product-card {
     background: white;
     border-radius: 12px;
@@ -128,6 +172,8 @@ nav {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.2s;
     width: 100%;
+    scroll-snap-align: start;
+    color: #3f2a1e;
 }
 
     .product-card:hover {
@@ -136,8 +182,9 @@ nav {
 
     .product-card img {
         width: 100%;
-        height: 300px;
+        height: 220px;
         object-fit: cover;
+        display: block;
     }
 
     .product-image-wrapper {
@@ -152,10 +199,11 @@ nav {
         object-fit: cover; /* "Cover" wypełni obszar (może lekko uciąć boki), 
                           "Contain" pokaże całe zdjęcie (mogą być puste paski) */
     }
-    
+
 
 .product-info {
     padding: 1.2rem;
+    background: white;
 }
 
     .product-info h3 {
@@ -207,6 +255,32 @@ nav {
         background: #3f2a1e;
     }
 
+/*Przycisk do slider*/
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #5c4033;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+    .nav-btn:hover {
+        background: #3f2a1e;
+        transform: scale(1.1);
+    }
+    .nav-btn.prev { left: -15px; }
+    .nav-btn.next { right: -15px; }
 /* =========================================
    5. SEKCJA KONTAKT (FORMULARZ)
 ========================================= */
@@ -337,9 +411,4 @@ footer {
     #kontakt form {
         padding: 20px;
     }
-}
-
-.product-card {
-    background: #f8f1e3;
-    color: #3f2a1e;
 }
