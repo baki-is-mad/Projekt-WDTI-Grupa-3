@@ -266,6 +266,7 @@ nav {
     grid-auto-flow: column;
     grid-auto-columns: 300px;
     gap: 2rem;
+    justify-content: center;
 }
 .products-slider {
     display: grid;
