@@ -257,5 +257,17 @@
             <a href="#">Kontakt</a>
         </div>
     </footer>
+    <script>
+        function sideScroll(element, direction) {
+            const container = element.parentElement.querySelector('.products-grid');
+            const scrollAmount = 320; // szerokość karty + gap
+            
+            if (direction === 'left') {
+                container.scrollLeft -= scrollAmount;
+            } else {
+                container.scrollLeft += scrollAmount;
+            }
+        }
+    </script>
 </body>
 </html>
