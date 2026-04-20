@@ -28,35 +28,48 @@ function removeProduct(productId) {
 function showModal(productId) {
     productToRemoveId = productId;
     const modal = document.getElementById('delete-modal');
-    modal.style.display = 'flex'; 
+    if (modal) {
+        modal.style.display = 'flex'; 
+    }
 }
 
 function hideModal() {
     productToRemoveId = null;
     const modal = document.getElementById('delete-modal');
-    modal.style.display = 'none';
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
-document.getElementById('confirm-btn').addEventListener('click', function() {
-    if (productToRemoveId) {
-        const productRow = document.getElementById(productToRemoveId);
-        if (productRow) {
-            productRow.remove(); 
+const confirmBtn = document.getElementById('confirm-btn');
+if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+        if (productToRemoveId) {
+            const productRow = document.getElementById(productToRemoveId);
+            if (productRow) {
+                productRow.remove(); 
+            }
+            updateCartTotals(); 
+            hideModal(); 
         }
-        updateCartTotals(); 
-        hideModal(); 
-    }
-});
+    });
+}
 
-document.getElementById('cancel-btn').addEventListener('click', function() {
-    hideModal();
-});
-
-document.getElementById('delete-modal').addEventListener('click', function(event) {
-    if (event.target === this) {
+const cancelBtn = document.getElementById('cancel-btn');
+if (cancelBtn) {
+    cancelBtn.addEventListener('click', function() {
         hideModal();
-    }
-});
+    });
+}
+
+const deleteModal = document.getElementById('delete-modal');
+if (deleteModal) {
+    deleteModal.addEventListener('click', function(event) {
+        if (event.target === this) {
+            hideModal();
+        }
+    });
+}
 
 function updateCartTotals() {
     let subtotal = 0;
@@ -67,13 +80,16 @@ function updateCartTotals() {
     const summaryBox = document.querySelector('.cart-summary-box');
 
     if (productRows.length === 0) {
-        cartContainer.innerHTML = '<p class="empty-cart-msg">Brak produktów w koszyku</p>';
+        if (cartContainer) {
+            cartContainer.innerHTML = '<p class="empty-cart-msg">Brak produktów w koszyku</p>';
+        }
         
         if (summaryBox) {
             summaryBox.style.display = 'none';
         }
         
-        document.getElementById('cart-count').innerText = '0';
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) cartCount.innerText = '0';
         return; 
     }
 
@@ -82,26 +98,37 @@ function updateCartTotals() {
     }
 
     productRows.forEach(row => {
-        const qty = parseInt(row.querySelector('.qty-input').value);
-        const price = parseFloat(row.querySelector('.unit-price').getAttribute('data-price'));
+        const qtyInput = row.querySelector('.qty-input');
+        const unitPriceSpan = row.querySelector('.unit-price');
         
-        subtotal += (qty * price);
-        totalItemsCount += qty;
+        if (qtyInput && unitPriceSpan) {
+            const qty = parseInt(qtyInput.value);
+            const price = parseFloat(unitPriceSpan.getAttribute('data-price'));
+            
+            subtotal += (qty * price);
+            totalItemsCount += qty;
+        }
     });
 
-    document.getElementById('cart-count').innerText = totalItemsCount;
-    document.getElementById('subtotal-val').innerText = formatPrice(subtotal);
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) cartCount.innerText = totalItemsCount;
+    
+    const subtotalVal = document.getElementById('subtotal-val');
+    if (subtotalVal) subtotalVal.innerText = formatPrice(subtotal);
 
     let currentDeliveryCost = 0;
+    const deliveryVal = document.getElementById('delivery-val');
+    
     if (totalItemsCount > 0) {
         currentDeliveryCost = deliveryCost;
-        document.getElementById('delivery-val').innerText = formatPrice(currentDeliveryCost);
+        if (deliveryVal) deliveryVal.innerText = formatPrice(currentDeliveryCost);
     } else {
-        document.getElementById('delivery-val').innerText = formatPrice(0);
+        if (deliveryVal) deliveryVal.innerText = formatPrice(0);
     }
 
     const total = subtotal + currentDeliveryCost;
-    document.getElementById('total-val').innerText = formatPrice(total);
+    const totalVal = document.getElementById('total-val');
+    if (totalVal) totalVal.innerText = formatPrice(total);
 }
 
 function formatPrice(number) {
@@ -109,3 +136,41 @@ function formatPrice(number) {
 }
 
 document.addEventListener('DOMContentLoaded', updateCartTotals);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', openCheckout);
+    }
+});
+
+function openCheckout() {
+    const checkoutModal = document.getElementById('checkoutModal');
+    const finalTotal = document.getElementById('final-total');
+    const totalVal = document.getElementById('total-val');
+    
+    if (checkoutModal && finalTotal && totalVal) {
+        finalTotal.innerText = totalVal.innerText;
+        checkoutModal.style.display = 'block';
+    }
+}
+
+function closeCheckout() {
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (checkoutModal) {
+        checkoutModal.style.display = 'none';
+    }
+}
+
+window.addEventListener('click', function(event) {
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (event.target === checkoutModal) {
+        closeCheckout();
+    }
+});
+
+function processOrder(event) {
+    event.preventDefault();
+    alert('Dziękujemy za zamówienie!');
+    closeCheckout();
+}
