@@ -92,15 +92,55 @@
             <a href="#">Kontakt</a>
         </div>
     </footer>
-<div id="delete-modal" class="modal-overlay">
-    <div class="modal-content">
-        <p>Czy na pewno chcesz usunąć produkt z koszyka?</p>
-        <div class="modal-buttons">
-            <button id="confirm-btn" class="btn-yes">Tak</button>
-            <button id="cancel-btn" class="btn-no">Wróć do koszyka</button>
+    
+        <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-content">
+            <span class="close-modal" onclick="closeCheckout()">&times;</span>
+            <h2>Finalizacja zamówienia</h2>
+    
+            <form id="checkoutForm" onsubmit="processOrder(event)">
+                <div class="checkout-grid">
+                    <div class="checkout-section">
+                        <h3><i class="fa-solid fa-truck"></i> Dane dostawy</h3>
+                        <input type="text" placeholder="Imię i Nazwisko" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="tel" placeholder="Numer telefonu" required>
+                        <input type="text" placeholder="Ulica i numer" required>
+                        <div class="zip-city">
+                            <input type="text" placeholder="Kod pocztowy" required>
+                            <input type="text" placeholder="Miasto" required>
+                        </div>
+                    </div>
+    
+                    <div class="checkout-section">
+                        <h3><i class="fa-solid fa-credit-card"></i> Metoda płatności</h3>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="blik" checked>
+                                <span><i class="fa-solid fa-mobile-screen"></i> BLIK</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <span><i class="fa-solid fa-credit-card"></i> Karta płatnicza</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="transfer">
+                                <span><i class="fa-solid fa-building-columns"></i> Przelew online</span>
+                            </label>
+                        </div>
+    
+                        <div class="final-summary">
+                            <div class="summary-line">
+                                <span>Do zapłaty:</span>
+                                <strong id="final-total">0,00 zł</strong>
+                            </div>
+                        </div>
+    
+                        <button type="submit" class="btn checkout-submit-btn">Płacę i zamawiam</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-    <script src="js/cart.js"></script>
 </body>
 </html>
