@@ -720,3 +720,167 @@ footer {
     padding: 50px 20px;
     font-weight: bold;
 }
+
+/* Stylizacja specyficzna dla okna płatności */
+.checkout-content {
+    max-width: 700px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.checkout-section h3 {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f8f1e3;
+    padding-bottom: 5px;
+}
+
+.checkout-section input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.zip-city {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+/* Kontener na metody płatności - ograniczamy szerokość */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 75px; /* Zwiększona szerokość, by napisy się mieściły */
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #fff;
+    border: 2px solid #eeebe6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    justify-content: flex-start; /* Wszystko do lewej */
+}
+
+    /* Styl kółka wyboru */
+    .payment-option input[type="radio"] {
+        margin: 0 20px 0 0; /* Odstęp tylko z prawej strony kółka */
+        cursor: pointer;
+        accent-color: #5c4033;
+        flex-shrink: 0; /* Kółko nie może się zgnieść */
+    }
+
+    /* Napis i ikona razem */
+    .payment-option span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        color: #5c4033;
+        font-weight: 400;
+        white-space: nowrap; /* Blokuje łamanie tekstu do nowej linii */
+    }
+
+    /* Stała szerokość ikony, by teksty pod sobą były równe */
+    .payment-option i {
+        font-size: 1.1rem;
+        width: 20px;
+        text-align: center;
+    }
+
+    /* Efekt po wybraniu */
+    .payment-option:has(input:checked) {
+        border-color: #5c4033;
+        background-color: #fcfaf7;
+    }
+
+.final-summary {
+    background: #f8f1e3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 75%;
+}
+
+.checkout-submit-btn {
+    background: #27ae60; /* Zielony dla płatności */
+    font-size: 1.1rem;
+    max-width: 200px;
+}
+
+    .checkout-submit-btn:hover {
+        background: #219150;
+    }
+
+
+/* GŁÓWNE OKNO (MODAL) */
+.modal {
+    display: none; /* Ukrywamy okno na start */
+    position: fixed; /* Wyciągamy je z układu strony - teraz nie "pcha" innych elementów */
+    z-index: 2000; /* Bardzo wysoki numer, by okno było nad menu i stopką */
+    left: 0;
+    top: 0;
+    width: 100%; /* Przykrywamy całą szerokość ekranu */
+    height: 100%; /* Przykrywamy całą wysokość ekranu */
+    background-color: rgba(0,0,0,0.6); /* Półprzezroczyste tło (przyciemnienie) */
+    backdrop-filter: blur(4px); /* Efekt rozmycia strony pod spodem */
+    overflow-y: auto; /* Pozwala przewijać, jeśli formularz nie mieści się na ekranie */
+}
+
+/* PUDEŁKO Z TREŚCIĄ (BIAŁA KARTA) */
+.modal-content.checkout-content {
+    background-color: #f8f1e3;
+    margin: 50px auto; /* Środkowanie w poziomie i odstęp od góry */
+    padding: 40px;
+    border-radius: 20px;
+    width: 95%;
+    max-width: 700px; /* Maksymalna szerokość okna płatności */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* PRZYCISK ZAMYKANIA (X) */
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #5c4033;
+    cursor: pointer;
+    line-height: 1;
+}
+
+    .close-modal:hover {
+        color: #cc0000; /* Zmiana koloru na czerwony przy najechaniu */
+    }
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Produkty po lewej, podsumowanie po prawej */
+    gap: 30px;
+    margin: 0 auto; /* Środkowanie kontenera */
+    max-width: 1200px; /* Szerokość taka sama jak reszta strony */
+    align-items: start;
+}
+@media (max-width: 900px) {
+    .cart-layout {
+        grid-template-columns: 1fr; /* Jeden pod drugim na małym ekranie */
+    }
+}
