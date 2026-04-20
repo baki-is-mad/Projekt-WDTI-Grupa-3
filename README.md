@@ -1,4 +1,4 @@
-![Logo AromaLAB](AromaLAB_Logo_Backgroundless.png)
+![Logo AromaLAB](AromaLAB_Logo_White.jpg)
 
 
 # Projekt-WDTI-Grupa-3
