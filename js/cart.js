@@ -63,6 +63,23 @@ function updateCartTotals() {
     let totalItemsCount = 0;
     
     const productRows = document.querySelectorAll('.cart-product-row');
+    const cartContainer = document.getElementById('cart-items-container');
+    const summaryBox = document.querySelector('.cart-summary-box');
+
+    if (productRows.length === 0) {
+        cartContainer.innerHTML = '<p class="empty-cart-msg">Brak produktów w koszyku</p>';
+        
+        if (summaryBox) {
+            summaryBox.style.display = 'none';
+        }
+        
+        document.getElementById('cart-count').innerText = '0';
+        return; 
+    }
+
+    if (summaryBox) {
+        summaryBox.style.display = 'block';
+    }
 
     productRows.forEach(row => {
         const qty = parseInt(row.querySelector('.qty-input').value);
