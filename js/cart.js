@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', openCheckout);
     }
-});
-const nameInput = document.getElementById('checkout-name');
+
+    const nameInput = document.getElementById('checkout-name');
     const phoneInput = document.getElementById('checkout-phone');
     const zipInput = document.getElementById('checkout-zip');
     const cityInput = document.getElementById('checkout-city');
