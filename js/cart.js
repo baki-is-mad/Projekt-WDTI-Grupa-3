@@ -129,6 +129,7 @@ function updateCartTotals() {
     const total = subtotal + currentDeliveryCost;
     const totalVal = document.getElementById('total-val');
     if (totalVal) totalVal.innerText = formatPrice(total);
+    saveDOMToLocalStorage();
 }
 
 function formatPrice(number) {
@@ -172,6 +173,9 @@ window.addEventListener('click', function(event) {
 function processOrder(event) {
     event.preventDefault();
     alert('Dziękujemy za zamówienie!');
+    zapiszKoszyk([]);
+    renderujWizualnyKoszyk();
+    updateCartTotals();
     closeCheckout();
 }
 
