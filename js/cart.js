@@ -143,6 +143,35 @@ document.addEventListener('DOMContentLoaded', function() {
         checkoutBtn.addEventListener('click', openCheckout);
     }
 });
+const nameInput = document.getElementById('checkout-name');
+    const phoneInput = document.getElementById('checkout-phone');
+    const zipInput = document.getElementById('checkout-zip');
+    const cityInput = document.getElementById('checkout-city');
+
+    const blockNumbersAndSpecial = function(e) {
+        this.value = this.value.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s]/g, '');
+    };
+    
+    if(nameInput) nameInput.addEventListener('input', blockNumbersAndSpecial);
+    if(cityInput) cityInput.addEventListener('input', blockNumbersAndSpecial);
+
+    if(phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    if(zipInput) {
+        zipInput.addEventListener('input', function(e) {
+            let val = this.value.replace(/[^\d]/g, '');
+            if (val.length > 2) {
+                this.value = val.slice(0, 2) + '-' + val.slice(2, 5);
+            } else {
+                this.value = val;
+            }
+        });
+    }
+});
 
 function openCheckout() {
     const checkoutModal = document.getElementById('checkoutModal');
