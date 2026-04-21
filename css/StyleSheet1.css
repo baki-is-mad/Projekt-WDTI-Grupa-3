@@ -155,7 +155,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column; /* Ustawia logo nad menu */
+    flex-direction: row; /* Ustawia logo na lewo od menu */
     align-items: center; /* Środkuje w poziomie */
     gap: 1rem; /* Odstęp między logo a linkami */
 }
