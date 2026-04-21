@@ -170,7 +170,67 @@ window.addEventListener('click', function(event) {
 });
 
 function processOrder(event) {
-    event.preventDefault();
-    alert('Dziękujemy za zamówienie!');
-    closeCheckout();
+    event.preventDefault(); 
+
+    const nameInput = document.getElementById('checkout-name');
+    const emailInput = document.getElementById('checkout-email');
+    const phoneInput = document.getElementById('checkout-phone');
+    const streetInput = document.getElementById('checkout-street');
+    const zipInput = document.getElementById('checkout-zip');
+    const cityInput = document.getElementById('checkout-city');
+
+    let isValid = true;
+    let errorMessage = "";
+
+    const inputs = [nameInput, emailInput, phoneInput, streetInput, zipInput, cityInput];
+    inputs.forEach(input => {
+        if (input) input.style.border = "";
+    });
+
+    const lettersOnlyRegex = /^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s]+$/;
+    const phoneRegex = /^\d{9}$/;
+    const zipRegex = /^\d{2}-\d{3}$/;
+
+    if (!lettersOnlyRegex.test(nameInput.value.trim())) {
+        isValid = false;
+        errorMessage += "- Imię i nazwisko może zawierać tylko litery i spacje.\n";
+        nameInput.style.border = "2px solid red";
+    }
+
+    if (!emailInput.value.includes('@')) {
+        isValid = false;
+        errorMessage += "- Podaj poprawny adres e-mail (musi zawierać znak @).\n";
+        emailInput.style.border = "2px solid red";
+    }
+
+    if (!phoneRegex.test(phoneInput.value.trim())) {
+        isValid = false;
+        errorMessage += "- Numer telefonu musi składać się z dokładnie 9 cyfr.\n";
+        phoneInput.style.border = "2px solid red";
+    }
+
+    if (streetInput.value.trim() === "") {
+        isValid = false;
+        errorMessage += "- Pole 'Ulica i numer' nie może być puste.\n";
+        streetInput.style.border = "2px solid red";
+    }
+
+    if (!zipRegex.test(zipInput.value.trim())) {
+        isValid = false;
+        errorMessage += "- Kod pocztowy musi być w formacie 00-000.\n";
+        zipInput.style.border = "2px solid red";
+    }
+
+    if (!lettersOnlyRegex.test(cityInput.value.trim())) {
+        isValid = false;
+        errorMessage += "- Miasto może zawierać tylko litery i spacje.\n";
+        cityInput.style.border = "2px solid red";
+    }
+
+    if (!isValid) {
+        alert("Popraw poniższe błędy:\n\n" + errorMessage);
+    } else {
+        alert('Dziękujemy za zamówienie! Wszystkie dane są poprawne.');
+        closeCheckout();
+    }
 }
