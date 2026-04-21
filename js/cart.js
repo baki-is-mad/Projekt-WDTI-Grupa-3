@@ -137,8 +137,6 @@ function formatPrice(number) {
     return number.toFixed(2).replace('.', ',') + ' zł';
 }
 
-document.addEventListener('DOMContentLoaded', updateCartTotals);
-
 document.addEventListener('DOMContentLoaded', function() {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
