@@ -111,13 +111,13 @@
                 <div class="checkout-grid">
                     <div class="checkout-section">
                         <h3><i class="fa-solid fa-truck"></i> Dane dostawy</h3>
-                        <input type="text" placeholder="Imię i Nazwisko" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="tel" placeholder="Numer telefonu" required>
-                        <input type="text" placeholder="Ulica i numer" required>
-                        <div class="zip-city">
-                            <input type="text" placeholder="Kod pocztowy" required>
-                            <input type="text" placeholder="Miasto" required>
+                        <input type="text" id="checkout-name" placeholder="Imię i Nazwisko" required>
+                        <input type="email" id="checkout-email" placeholder="Email" required>
+                        <input type="tel" id="checkout-phone" placeholder="Numer telefonu" maxlength="9" required>
+                        <input type="text" id="checkout-street" placeholder="Ulica i numer" required>
+                    <div class="zip-city">
+                        <input type="text" id="checkout-zip" placeholder="Kod pocztowy" maxlength="6" required>
+                        <input type="text" id="checkout-city" placeholder="Miasto" required>
                         </div>
                     </div>
     
