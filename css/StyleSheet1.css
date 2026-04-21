@@ -411,15 +411,59 @@ nav {
     background-color: #f8f1e3;
 }
 
-    #kontakt form {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(63, 42, 30, 0.1);
-        width: 100%;
-        max-width: 500px;
+#kontakt form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(63, 42, 30, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    /* AKTYWACJA SIATKI */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dwie równe kolumny */
+    column-gap: 40px; /* Odstęp między lewą a prawą stroną */
+}
+
+    /* LEWA KOLUMNA - Pozycjonowanie pól (Imię, Email, Temat) */
+    #kontakt form > *:nth-child(1), /* Label Imię */
+    #kontakt form > *:nth-child(2), /* Input Imię */
+    #kontakt form > *:nth-child(3), /* Label Email */
+    #kontakt form > *:nth-child(4), /* Input Email */
+    #kontakt form > *:nth-child(5), /* Label Temat */
+    #kontakt form > *:nth-child(6) /* Select Temat */ {
+        grid-column: 1;
     }
 
+    /* PRAWA KOLUMNA - Pozycjonowanie Wiadomości */
+    #kontakt form > *:nth-child(7) { /* Label Wiadomość */
+        grid-column: 2;
+        grid-row: 1; /* Wymuszamy start od samej góry */
+    }
+
+    #kontakt form > *:nth-child(8) { /* Textarea */
+        grid-column: 2;
+        grid-row: 2 / 7; /* Rozciąga pole od 2 wiersza aż do przycisku */
+        height: calc(100% - 25px); /* Dopasowanie wysokości z uwzględnieniem marginesów */
+        margin-bottom: 25px;
+    }
+
+/* PRZYCISK - Na całą szerokość */
+#kontakt button {
+    grid-column: 1 / 3; /* Rozciągnięcie od 1 do 3 linii siatki (całość) */
+    width: 100%;
+    padding: 15px;
+    background-color: #5c4032;
+    color: #f8f1e3;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
     #kontakt label {
         display: block;
         margin-bottom: 8px;
