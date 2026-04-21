@@ -90,6 +90,7 @@ function updateCartTotals() {
         
         const cartCount = document.getElementById('cart-count');
         if (cartCount) cartCount.innerText = '0';
+        saveDOMToLocalStorage();
         return; 
     }
 
