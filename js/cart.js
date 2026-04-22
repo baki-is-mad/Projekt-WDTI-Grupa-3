@@ -158,6 +158,58 @@ document.addEventListener('DOMContentLoaded', function() {
     if(phoneInput) {
         phoneInput.addEventListener('input', function(e) {
             this.value = this.value.replace(/[^\d]/g, '');
+    const paymentRadios = document.querySelectorAll('input[name="payment"]');
+    const detailsBlik = document.getElementById('payment-details-blik');
+    const detailsCard = document.getElementById('payment-details-card');
+    const detailsTransfer = document.getElementById('payment-details-transfer');
+
+    paymentRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if(detailsBlik) detailsBlik.style.display = 'none';
+            if(detailsCard) detailsCard.style.display = 'none';
+            if(detailsTransfer) detailsTransfer.style.display = 'none';
+
+            if (this.value === 'blik' && detailsBlik) detailsBlik.style.display = 'block';
+            if (this.value === 'card' && detailsCard) detailsCard.style.display = 'block';
+            if (this.value === 'transfer' && detailsTransfer) detailsTransfer.style.display = 'block';
+        });
+    });
+
+    const blikCode = document.getElementById('blik-code');
+    if (blikCode) {
+        blikCode.addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    const cardNumber = document.getElementById('card-number');
+    if (cardNumber) {
+        cardNumber.addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    const cardCvv = document.getElementById('card-cvv');
+    if (cardCvv) {
+        cardCvv.addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    const cardName = document.getElementById('card-name');
+    if (cardName) cardName.addEventListener('input', blockNumbersAndSpecial);
+
+    const cardExpiry = document.getElementById('card-expiry');
+    if (cardExpiry) {
+        cardExpiry.addEventListener('input', function(e) {
+            let val = this.value.replace(/[^\d]/g, '');
+            if (val.length > 2) {
+                this.value = val.slice(0, 2) + '/' + val.slice(2, 4);
+            } else {
+                this.value = val;
+            }
+        });
+    }
         });
     }
 
@@ -211,7 +263,10 @@ function processOrder(event) {
     let isValid = true;
     let errorMessage = "";
 
-    const inputs = [nameInput, emailInput, phoneInput, streetInput, zipInput, cityInput];
+    const inputs = [nameInput, emailInput, phoneInput, streetInput, zipInput, cityInput, 
+                    document.getElementById('blik-code'), document.getElementById('card-name'), 
+                    document.getElementById('card-number'), document.getElementById('card-expiry'), 
+                    document.getElementById('card-cvv'), document.getElementById('transfer-bank')];
     inputs.forEach(input => {
         if (input) input.style.border = "";
     });
@@ -254,6 +309,49 @@ function processOrder(event) {
         isValid = false;
         errorMessage += "- Miasto może zawierać tylko litery i spacje.\n";
         cityInput.style.border = "2px solid red";
+    }
+    const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+
+    if (selectedPayment === 'blik') {
+        const blikInput = document.getElementById('blik-code');
+        if (blikInput && !/^\d{6}$/.test(blikInput.value)) {
+            isValid = false;
+            errorMessage += "- Kod BLIK musi składać się z dokładnie 6 cyfr.\n";
+            blikInput.style.border = "2px solid red";
+        }
+    } else if (selectedPayment === 'card') {
+        const cName = document.getElementById('card-name');
+        const cNum = document.getElementById('card-number');
+        const cExp = document.getElementById('card-expiry');
+        const cCvv = document.getElementById('card-cvv');
+
+        if (cName && cName.value.trim().length === 0) {
+            isValid = false;
+            errorMessage += "- Podaj imię i nazwisko właściciela karty.\n";
+            cName.style.border = "2px solid red";
+        }
+        if (cNum && !/^\d{16}$/.test(cNum.value)) {
+            isValid = false;
+            errorMessage += "- Numer karty musi mieć 16 cyfr.\n";
+            cNum.style.border = "2px solid red";
+        }
+        if (cExp && !/^(0[1-9]|1[0-2])\/\d{2}$/.test(cExp.value)) {
+            isValid = false;
+            errorMessage += "- Data ważności karty musi być w formacie MM/YY.\n";
+            cExp.style.border = "2px solid red";
+        }
+        if (cCvv && !/^\d{3}$/.test(cCvv.value)) {
+            isValid = false;
+            errorMessage += "- Kod CVV musi mieć 3 cyfry.\n";
+            cCvv.style.border = "2px solid red";
+        }
+    } else if (selectedPayment === 'transfer') {
+        const tBank = document.getElementById('transfer-bank');
+        if (tBank && tBank.value === "") {
+            isValid = false;
+            errorMessage += "- Wybierz bank do przelewu z listy.\n";
+            tBank.style.border = "2px solid red";
+        }
     }
 
     if (!isValid) {
