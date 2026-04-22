@@ -15,3 +15,64 @@ function sideScroll(button, direction) {
         });
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#kontakt form');
+    const nameInput = document.getElementById('imie');
+    const emailInput = document.getElementById('email');
+    const topicSelect = document.getElementById('temat');
+    const messageInput = document.getElementById('wiadomosc');
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const contactModal = document.getElementById('contact-modal');
+    const closeBtn = document.querySelector('.close-contact-modal');
+
+    if (!form || !nameInput || !emailInput || !topicSelect || !messageInput || !submitBtn) return;
+
+    nameInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s]/g, '');
+        checkFormValidity();
+    });
+
+    emailInput.addEventListener('input', checkFormValidity);
+    topicSelect.addEventListener('change', checkFormValidity);
+    messageInput.addEventListener('input', checkFormValidity);
+
+    function checkFormValidity() {
+        const isNameValid = nameInput.value.trim().length > 0;
+        const isEmailValid = emailInput.value.includes('@');
+        const isTopicValid = topicSelect.value !== "";
+        const isMessageValid = messageInput.value.trim().length > 0;
+
+        if (isNameValid && isEmailValid && isTopicValid && isMessageValid) {
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.disabled = true;
+        }
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if(contactModal) {
+            contactModal.style.display = 'flex';
+        }
+    });
+
+    function closeModalAndReset() {
+        if(contactModal) contactModal.style.display = 'none';
+        form.reset();
+        checkFormValidity();
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModalAndReset);
+    }
+
+    if (contactModal) {
+        contactModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModalAndReset();
+            }
+        });
+    }
+
+    checkFormValidity();
+});
