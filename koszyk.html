@@ -124,43 +124,44 @@
                     <div class="checkout-section">
                         <h3><i class="fa-solid fa-credit-card"></i> Metoda płatności</h3>
                         <div class="payment-methods">
-                            <label class="payment-option">
-                                <input type="radio" name="payment" value="blik" checked>
-                                <span><i class="fa-solid fa-mobile-screen"></i> BLIK</span>
-                            </label>
-                            <label class="payment-option">
-                                <input type="radio" name="payment" value="card">
-                                <span><i class="fa-solid fa-credit-card"></i> Karta płatnicza</span>
-                            </label>
-                            <label class="payment-option">
-                                <input type="radio" name="payment" value="transfer">
-                                <span><i class="fa-solid fa-building-columns"></i> Przelew online</span>
-                            </label>
-                            <div id="payment-details-blik" class="payment-details" style="display: block;">
-                            <input type="text" id="blik-code" placeholder="Kod BLIK" maxlength="6">
-                        </div>
-
-                        <div id="payment-details-card" class="payment-details" style="display: none;">
-                            <input type="text" id="card-name" placeholder="Imię i nazwisko właściciela">
-                            <input type="text" id="card-number" placeholder="Numer karty" maxlength="16">
-                            <div class="card-extra">
-                                <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
-                                <input type="text" id="card-cvv" placeholder="CVV" maxlength="3">
-                            </div>
-                        </div>
-
-                        <div id="payment-details-transfer" class="payment-details" style="display: none;">
-                            <select id="transfer-bank">
-                                <option value="">Wybierz swój bank...</option>
-                                <option value="mbank">mBank</option>
-                                <option value="ing">ING Bank Śląski</option>
-                                <option value="pekao">Bank Pekao</option>
-                                <option value="pko">PKO BP</option>
-                                <option value="santander">Santander</option>
-                            </select>
-                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Zostaniesz przekierowany na stronę logowania swojego banku.</p>
-                        </div>
-                        </div>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="blik">
+                        <span><i class="fa-solid fa-mobile-screen"></i> BLIK</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card">
+                        <span><i class="fa-solid fa-credit-card"></i> Karta płatnicza</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="transfer">
+                        <span><i class="fa-solid fa-building-columns"></i> Przelew online</span>
+                    </label>
+                </div>
+                
+                <div id="payment-details-blik" class="payment-details" style="display: none;">
+                    <input type="text" id="blik-code" placeholder="Kod BLIK (6 cyfr)" maxlength="6">
+                </div>
+                
+                <div id="payment-details-card" class="payment-details" style="display: none;">
+                    <input type="text" id="card-name" placeholder="Imię i nazwisko właściciela">
+                    <input type="text" id="card-number" placeholder="Numer karty (16 cyfr)" maxlength="16">
+                    <div class="card-extra">
+                        <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                        <input type="text" id="card-cvv" placeholder="CVV" maxlength="3">
+                    </div>
+                </div>
+                
+                <div id="payment-details-transfer" class="payment-details" style="display: none;">
+                    <select id="transfer-bank">
+                        <option value="">Wybierz swój bank...</option>
+                        <option value="mbank">mBank</option>
+                        <option value="ing">ING Bank Śląski</option>
+                        <option value="pekao">Bank Pekao</option>
+                        <option value="pko">PKO BP</option>
+                        <option value="santander">Santander</option>
+                    </select>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Zostaniesz przekierowany na stronę logowania swojego banku.</p>
+                </div>
     
                         <div class="final-summary">
                             <div class="summary-line">
