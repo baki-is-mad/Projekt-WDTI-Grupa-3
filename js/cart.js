@@ -309,50 +309,56 @@ function processOrder(event) {
         cityInput.style.border = "2px solid red";
     }
 
-    const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+    const selectedPaymentRadio = document.querySelector('input[name="payment"]:checked');
+    
+    if (!selectedPaymentRadio) {
+        isValid = false;
+        errorMessage += "- Wybierz metodę płatności.\n";
+    } else {
+        const selectedPayment = selectedPaymentRadio.value;
 
-    if (selectedPayment === 'blik') {
-        const blikInput = document.getElementById('blik-code');
-        if (blikInput && !/^\d{6}$/.test(blikInput.value)) {
-            isValid = false;
-            errorMessage += "- Kod BLIK musi składać się z dokładnie 6 cyfr.\n";
-            blikInput.style.border = "2px solid red";
-        }
-    } else if (selectedPayment === 'card') {
-        const cName = document.getElementById('card-name');
-        const cNum = document.getElementById('card-number');
-        const cExp = document.getElementById('card-expiry');
-        const cCvv = document.getElementById('card-cvv');
+        if (selectedPayment === 'blik') {
+            const blikInput = document.getElementById('blik-code');
+            if (blikInput && !/^\d{6}$/.test(blikInput.value)) {
+                isValid = false;
+                errorMessage += "- Kod BLIK musi składać się z dokładnie 6 cyfr.\n";
+                blikInput.style.border = "2px solid red";
+            }
+        } else if (selectedPayment === 'card') {
+            const cName = document.getElementById('card-name');
+            const cNum = document.getElementById('card-number');
+            const cExp = document.getElementById('card-expiry');
+            const cCvv = document.getElementById('card-cvv');
 
-        if (cName && cName.value.trim().length === 0) {
-            isValid = false;
-            errorMessage += "- Podaj imię i nazwisko właściciela karty.\n";
-            cName.style.border = "2px solid red";
-        }
-        if (cNum && !/^\d{16}$/.test(cNum.value)) {
-            isValid = false;
-            errorMessage += "- Numer karty musi mieć 16 cyfr.\n";
-            cNum.style.border = "2px solid red";
-        }
-        if (cExp && !/^(0[1-9]|1[0-2])\/\d{2}$/.test(cExp.value)) {
-            isValid = false;
-            errorMessage += "- Data ważności karty musi być w formacie MM/YY.\n";
-            cExp.style.border = "2px solid red";
-        }
-        if (cCvv && !/^\d{3}$/.test(cCvv.value)) {
-            isValid = false;
-            errorMessage += "- Kod CVV musi mieć 3 cyfry.\n";
-            cCvv.style.border = "2px solid red";
-        }
-    } else if (selectedPayment === 'transfer') {
-        const tBank = document.getElementById('transfer-bank');
-        if (tBank && tBank.value === "") {
-            isValid = false;
-            errorMessage += "- Wybierz bank do przelewu z listy.\n";
-            tBank.style.border = "2px solid red";
+            if (cName && cName.value.trim().length === 0) {
+                isValid = false;
+                errorMessage += "- Podaj imię i nazwisko właściciela karty.\n";
+                cName.style.border = "2px solid red";
+            }
+            if (cNum && !/^\d{16}$/.test(cNum.value)) {
+                isValid = false;
+                errorMessage += "- Numer karty musi mieć 16 cyfr.\n";
+                cNum.style.border = "2px solid red";
+            }
+            if (cExp && !/^(0[1-9]|1[0-2])\/\d{2}$/.test(cExp.value)) {
+                isValid = false;
+                errorMessage += "- Data ważności karty musi być w formacie MM/YY.\n";
+                cExp.style.border = "2px solid red";
+            }
+            if (cCvv && !/^\d{3}$/.test(cCvv.value)) {
+                isValid = false;
+                errorMessage += "- Kod CVV musi mieć 3 cyfry.\n";
+                cCvv.style.border = "2px solid red";
+            }
+        } else if (selectedPayment === 'transfer') {
+            const tBank = document.getElementById('transfer-bank');
+            if (tBank && tBank.value === "") {
+                isValid = false;
+                errorMessage += "- Wybierz bank do przelewu z listy.\n";
+                tBank.style.border = "2px solid red";
+            }
         }
     }
-
     if (!isValid) {
         alert("Popraw poniższe błędy:\n\n" + errorMessage);
     } else {
