@@ -1,5 +1,4 @@
 let productToRemoveId = null;
-
 const deliveryCost = 15.00;
 
 function changeQuantity(productId, delta) {
@@ -83,11 +82,9 @@ function updateCartTotals() {
         if (cartContainer) {
             cartContainer.innerHTML = '<p class="empty-cart-msg">Brak produktów w koszyku</p>';
         }
-        
         if (summaryBox) {
             summaryBox.style.display = 'none';
         }
-        
         const cartCount = document.getElementById('cart-count');
         if (cartCount) cartCount.innerText = '0';
         return; 
@@ -104,7 +101,6 @@ function updateCartTotals() {
         if (qtyInput && unitPriceSpan) {
             const qty = parseInt(qtyInput.value);
             const price = parseFloat(unitPriceSpan.getAttribute('data-price'));
-            
             subtotal += (qty * price);
             totalItemsCount += qty;
         }
@@ -158,6 +154,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if(phoneInput) {
         phoneInput.addEventListener('input', function(e) {
             this.value = this.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    if(zipInput) {
+        zipInput.addEventListener('input', function(e) {
+            let val = this.value.replace(/[^\d]/g, '');
+            if (val.length > 2) {
+                this.value = val.slice(0, 2) + '-' + val.slice(2, 5);
+            } else {
+                this.value = val;
+            }
+        });
+    }
+
     const paymentRadios = document.querySelectorAll('input[name="payment"]');
     const detailsBlik = document.getElementById('payment-details-blik');
     const detailsCard = document.getElementById('payment-details-card');
@@ -210,19 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-        });
-    }
-
-    if(zipInput) {
-        zipInput.addEventListener('input', function(e) {
-            let val = this.value.replace(/[^\d]/g, '');
-            if (val.length > 2) {
-                this.value = val.slice(0, 2) + '-' + val.slice(2, 5);
-            } else {
-                this.value = val;
-            }
-        });
-    }
 });
 
 function openCheckout() {
@@ -267,6 +264,7 @@ function processOrder(event) {
                     document.getElementById('blik-code'), document.getElementById('card-name'), 
                     document.getElementById('card-number'), document.getElementById('card-expiry'), 
                     document.getElementById('card-cvv'), document.getElementById('transfer-bank')];
+    
     inputs.forEach(input => {
         if (input) input.style.border = "";
     });
@@ -277,7 +275,7 @@ function processOrder(event) {
 
     if (!lettersOnlyRegex.test(nameInput.value.trim())) {
         isValid = false;
-        errorMessage += "- Imię i nazwisko może zawierać tylko litery i spacje.\n";
+        errorMessage += "- Imię i nazwisko dostawy może zawierać tylko litery i spacje.\n";
         nameInput.style.border = "2px solid red";
     }
 
@@ -310,6 +308,7 @@ function processOrder(event) {
         errorMessage += "- Miasto może zawierać tylko litery i spacje.\n";
         cityInput.style.border = "2px solid red";
     }
+
     const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
 
     if (selectedPayment === 'blik') {
