@@ -928,3 +928,38 @@ footer {
         grid-template-columns: 1fr; /* Jeden pod drugim na małym ekranie */
     }
 }
+/* --- WALIDACJA KONTAKTU I MODAL --- */
+#contact-submit-btn:disabled {
+    background-color: #a08a80; 
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
+.contact-modal-content {
+    background-color: #ffffff; 
+    position: relative;
+    padding: 50px 40px;
+}
+
+.contact-modal-content p {
+    font-size: 1.4rem;
+    color: #5c4032; 
+    font-weight: bold;
+    margin: 0;
+}
+
+.close-contact-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #5c4032;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-contact-modal:hover {
+    color: #cc0000;
+}
