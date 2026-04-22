@@ -807,19 +807,20 @@ footer {
     gap: 12px;
     margin-bottom: 25px;
     width: 100%;
-    max-width: 75%; /* Zwiększona szerokość, by napisy się mieściły */
+    max-width: none; /* Zwiększona szerokość, by napisy się mieściły */
 }
 
 .payment-option {
     display: flex;
     align-items: center;
+    width: 100%; /* Zmuszamy pudełko do wypełnienia 100% kolumny */
     padding: 12px 15px;
     background: #fff;
     border: 2px solid #eeebe6;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
-    justify-content: flex-start; /* Wszystko do lewej */
+    box-sizing: border-box;
 }
 
     /* Styl kółka wyboru */
