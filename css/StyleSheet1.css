@@ -807,7 +807,7 @@ footer {
     gap: 12px;
     margin-bottom: 25px;
     width: 100%;
-    max-width: 100% !important; /* Zwiększona szerokość, by napisy się mieściły */
+    max-width: 75%; /* Zwiększona szerokość, by napisy się mieściły */
 }
 
 .payment-option {
