@@ -175,9 +175,7 @@
                     <label for="wiadomosc">Wiadomość</label>
                     <textarea id="wiadomosc" name="wiadomosc" rows="6" required placeholder="Napisz co Cię interesuje..."></textarea>
 
-                    <button type="submit" onclick="alert('Dziękujemy! Twoja wiadomość została wysłana (demo).'); return false;">
-                        Wyślij wiadomość
-                    </button>
+                    <button type="submit" id="contact-submit-btn" disabled>Wyślij wiadomość</button>
                 </form>
             </section>
 
@@ -191,6 +189,12 @@
                     <a href="#">Kontakt</a>
                 </div>
             </footer>
+            <div id="contact-modal" class="modal-overlay">
+            <div class="modal-content contact-modal-content">
+           <span class="close-contact-modal">&times;</span>
+         <p>Dziękujemy za kontakt. Odpowiemy tak szybko, jak to możliwe.</p>
+    </div>
+</div>
 <script src="js/main"></script>
 </body>
 </html>
