@@ -268,7 +268,7 @@ async function pobierzKaweZAPI() {
 
     try {
         // Zgodnie z Twoim screenem - pobieramy jeden produkt
-        const odpowiedz = await fetch("https://fake-coffee-api.vercel.app/api/1");
+        const odpowiedz = await fetch("https://tea-api-gules.vercel.app/api/1");
         
         // Zawsze sprawdzamy, czy odpowiedź jest prawidłowa (status 200-299)
         if (!odpowiedz.ok) {
