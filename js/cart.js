@@ -270,6 +270,11 @@ async function pobierzKaweZAPI() {
         // Zgodnie z Twoim screenem - pobieramy jeden produkt
         const odpowiedz = await fetch("https://fake-coffee-api.vercel.app/api/1");
         
+        // Zawsze sprawdzamy, czy odpowiedź jest prawidłowa (status 200-299)
+        if (!odpowiedz.ok) {
+            throw new Error(`Błąd HTTP: ${odpowiedz.status}`); 
+        }
+        
         // Zmieniamy odpowiedź z serwera na obiekt JavaScript
         let kawa = await odpowiedz.json();
         
@@ -299,12 +304,26 @@ async function pobierzKaweZAPI() {
         // Podmieniamy tekst "Pobieranie..." na gotowy kafelek
         kontener.innerHTML = kartaHTML;
 
-    } catch (error) {
-        console.error("Błąd podczas pobierania z API:", error);
-        kontener.innerHTML = '<p>Brak połączenia z bazą. Nie udało się załadować polecanej kawy.</p>';
+    } 
+    catch (error) {
+        // Logujemy prawdziwy błąd tylko dla nas do konsoli (dla debugowania)
+        console.error("Błąd API, używam planu awaryjnego:", error.message);
+        
+        // W razie błędu "ratujemy" układ strony i wyświetlamy lokalny produkt!
+        kontener.innerHTML = `
+            <article class="product-card" style="max-width: 350px;">
+                <img src="jpg/kawa/brazil/jpg_kawa_3_.jpg" alt="Kawa Brazil" class="img-fluid" style="height: 250px; object-fit: cover;">
+                <div class="product-info">
+                    <h3>Kawa Brazil (Polecana)</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Najlepsza jakość prosto z naszej palarni.</p>
+                    <div class="price" style="text-align: center">29,99 zł</div>
+                    <a href="#" class="btn" onclick="dodajDoKoszyka('Kawa Brazil', 29.99, 'jpg/kawa/brazil/jpg_kawa_3_.jpg'); return false;">Do koszyka</a>
+                </div>
+            </article>
+        `;
     }
 }
-
+    
 document.addEventListener('DOMContentLoaded', () => {
     updateCartBadge();
     if (document.getElementById('cart-items-container')) {
