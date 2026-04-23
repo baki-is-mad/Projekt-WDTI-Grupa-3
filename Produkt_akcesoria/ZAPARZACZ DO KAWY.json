@@ -1,0 +1,124 @@
+ZAPARZACZ DO KAWY
+AEROPRESS
+[
+  {
+    "id": "aeropress",
+    "brand": "Cava",
+    "name": "Zaparzacz Aeropress",
+    "price": "99,99 zł",
+    "images": [
+      "img/aeropress1.jpg",
+      "img/aeropress2.jpg"
+    ],
+    "shortDesc": "AERO PRESS - wygoda i smak, które towarzyszą Ci każdego dnia.",
+    "description": "Idealny do przygotowania aromatycznej kawy w domu, biurze, podróży czy na campingu.",
+    "features": [
+      "rodzaj:" "zaparzacz do kawy typu AeroPress",
+      "przeznaczenie:" "parzenie metodą ciśnieniową/przelewową",
+      "materiał:" "wysokiej jakości tworzywo sztuczne",
+      "kolor:" "czarny transparentny"
+    ]
+  }
+]
+
+DRIP
+[
+  {
+    "id": "drip",
+    "name": "Zaparzacz Drip",
+    "price": "99,99 zł",
+    "images": [
+      "img/drip_1.jpg",
+      "img/drip_2.jpg"
+    ],
+    "description": "Elegancki dripper do kawy, idealny do metod przelewowych. Zapewnia pełnię smaku i aromatu dzięki optymalnemu przepływowi wody.",
+    "features": [
+      "rodzaj:" "dripper do kawy",
+      "przeznaczenie:" "parzenie metodą przelewową",
+      "materiał:" "ceramika, szkło",
+      "kolor:" "biały, transparentny"
+    ]
+  },
+]
+
+FRENCHPRESS
+[
+  {
+    "id": "frenchpress",
+    "name": "Zaparzacz FrenchPress",
+    "price": "99,99 zł",
+    "images": [
+      "img/frenchpress_1.jpg",
+      "img/frenchpress_2.jpg"
+    ],
+    "description": "Stylowy french press do kawy i herbaty. Metoda tłokowa pozwala zachować naturalne olejki i intensywny smak napoju.",
+    "features": [
+      "rodzaj:" "frenchpress",
+      "przeznaczenie:" "parzenie metodą tłokową",
+      "materiał:" "stal nierdzewna, szkło",
+      "kolor:" "srebrny, transparentny"
+    ]
+  },
+]
+
+KAWIARKA
+[
+{
+    "id": "kawiarka",
+    "name": "Zaparzacz Kawiarka",
+    "price": "99,99 zł",
+    "images": [
+      "img/kawiarka_1.jpg",
+      "img/kawiarka_2.jpg"
+    ],
+    "description": "Stylowa kawiarka do przygotowania intensywnej kawy o smaku zbliżonym do espresso. Idealna do domu, biura i podróży.",
+    "features": [
+      "rodzaj:" "kawiarka (espresso / moka)",
+      "przeznaczenie:" "parzenie metodą ciśnieniową",
+      "materiał:" "stal nierdzewna",
+      "kolor:" "srebrny"
+    ]
+  },
+]
+
+ZAPARZACZ SZKLANY
+[
+  {
+    "id": "szklany",
+    "brand": "Cava",
+    "name": "Zaparzacz szklany",
+    "price": "99,99 zł",
+    "images": [
+      "img/szklany1.jpg"
+    ],
+    "shortDesc": "Wspaniała jakość, szybkie zaparzanie herbaty i proste czyszczenie.",
+    "description": "Wykonany ze szkła żaroodpornego i stali. Ergonomiczny i nowoczesny design pasujący do każdej kuchni.",
+    "features": [
+      "rodzaj:" "tłokowy",
+      "przeznaczenie:" "parzenie herbaty i kawy",
+      "materiał:" "szkło borokrzemowe i stal nierdzewna",
+      "kolor:" "srebrny, transparentny"
+      ],
+  },   
+]
+
+ZAPARZACZ TŁOKOWY
+[
+  {
+    "id": "tłokowy",
+    "brand": "Cava",
+    "name": "Zaparzacz tłokowy",
+    "price": "99,99 zł",
+    "images": [
+      "img/zaparzacz_szklanu_2.jpg"
+    ],
+    "shortDesc": "Idealny do przygotowania aromatycznej kawy oraz herbaty metodą tłokową.",
+    "description": "French press jest niezwykle praktyczną zaparzarką w której można przygotować zarówno kawę jak i herbatę czy zioła. Zaparzarka jest wykonana z najwyższej klasy materiałów. Zawarte wewnątrz nierdzewne sitko zapobiega przedostawaniu się fusów czy też liści herbaty do filiżanki.",
+    "features": [
+      "rodzaj:" "frenchpress",
+      "przeznaczenie:" "parzenie herbaty i kawy metodą tłokowa",
+      "materiał:" "wysokiej jakości stal nierdzewna, szkło",
+      "kolor:" "srebrny, transparentny"
+      ],
+  },   
+]

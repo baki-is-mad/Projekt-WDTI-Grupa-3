@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Tytuł produktu -->
+    <title>Kubek ceramiczny brązowy</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .product-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px #0000001a;
+        }
+
+        .product-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brand {
+            color: #666;
+            font-size: 14px;
+        }
+        .product-title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 32px;
+            color: #e30613;
+            font-weight: bold;
+        }
+
+        .btn-cart {
+            background: #e30613;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+     
+        .btn-cart:hover { 
+            background-color: #e30613;
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 10px 25px #00000080, 0 0 20px #00000080;
+            filter: brightness(1.1);
+        }
+
+        .description {
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "•";
+            color: #1d1004;
+            position: absolute;
+            left: 0;
+        }
+        
+        .product-gallery {
+            max-width: 460px;
+        }
+
+        .main-image {
+            margin-bottom: 18px;
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 94px;
+            height: 94px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px #00000014;
+        }
+
+        .thumbnail:hover {
+            border-color: #d7ccc8;
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px #0000001f;
+        }
+
+        .thumbnail.active {
+            border-color: #3e2723;
+            box-shadow: 0 0 0 4px #e306131f;
+        }
+    
+    </style>
+    
+</head>
+<body>
+<div class="product-container">
+    <div class="product-top">
+<!-- Sekcja zdjęcie produktu -->
+
+<!-- Galeria zdjęć - lewa kolumna -->
+<div class="product-gallery">
+
+    <!-- Duże główne zdjęcie -->
+    <div class="main-image">
+        <img id="mainPhoto" 
+             src="C:\Users\Dominika\Desktop\str\jpg\akcesoria\zaparzacz\kubki\5\jpg_kubek_8.jpg" alt="Kubek ceramiczny - przód">
+    </div>
+
+    <!-- Dwie miniaturki pod spodem -->
+    <div class="thumbnails">
+        <img src="C:\Users\Dominika\Desktop\str\jpg\akcesoria\zaparzacz\kubki\5\jpg_kubek_8.jpg" alt="Kubek ceramiczny" 
+             class="thumbnail active"
+             onclick="changeImage (this)">
+
+        <img src="C:\Users\Dominika\Desktop\str\jpg\akcesoria\zaparzacz\kubki\5\jpg_kubek_9.jpg" alt="Szczegół" 
+             class="thumbnail"
+             onclick="changeImage(this)">
+    </div>
+</div>
+        
+        <!-- Informacje o produkcie -->
+        <div class="product-info">
+        <!-- Najpierw marka. Następnie cały opis -->
+            <p class="brand">Ambition</p>
+            <h1 class="product-title">Kubek ceramiczny szary</h1>
+
+            <p class="price">99,99 zł <span style="font-size:14px;">/ szt. brutto</span></p>
+            
+            <button class="btn-cart">Do koszyka</button>
+            
+
+            <div class="description">
+                <p>AMBITION - jakość, która towarzyszy Ci codziennie. Idealna do kawy, herbaty, wody, zimnych napojów. Doskonale sprawdzi się do codziennego użytku.</p>
+            </div>
+
+            <ul class="features">
+                <li><strong>Marka:</strong> AMBITION</li>
+                <li><strong>Pojemność:</strong> 360 ml</li>
+                <li><strong>Materiał:</strong> ceramika</li>
+                <li><strong>Kolor:</strong> brązowy, leśny motyw z nadrukiem</li>
+            </ul>
+          </div>
+    </div>
+    <div style="margin-top: 10px;">
+        <h2>Opis produktu</h2>
+        <p>Kubek Silva o pojemności 360 ml to wyjątkowe połączenie funkcjonalności i leśnej estetyki. Inspirowany przyrodą, posiada matowe wykończenie i delikatny nadruk sowy, co czyni go idealnym wyborem dla miłośników natury i prostoty. Jego uniwersalny kształt i kompaktowa pojemność doskonale sprawdzają się w codziennym użytkowaniu - zarówno w domu, jak i w pracy. Kubek wykonany jest z trwałej ceramiki, odpornej na wysokie temperatury, dzięki czemu nadaje się do kuchenki mikrofalowej oraz mycia w zmywarce. Naturalna kolorystyka w odcieniu ziemistego brązu dodaje mu wyjątkowego charakteru i sprawia, że pasuje do każdego wnętrza.</p>
+    </div>
+</div>
+</body>
+</html>
