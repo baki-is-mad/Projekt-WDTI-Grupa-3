@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Tytuł produktu -->
+    <title>Kawa ziarnista Colombia Supremo</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .product-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px #0000001a;
+        }
+
+        .product-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brand {
+            color: #666;
+            font-size: 14px;
+        }
+        .product-title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 32px;
+            color: #e30613;
+            font-weight: bold;
+        }
+
+        .btn-cart {
+            background: #e30613;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+     
+        .btn-cart:hover { 
+            background-color: #e30613;
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 10px 25px #00000080, 0 0 20px #00000080;
+            filter: brightness(1.1);
+        }
+
+        .description {
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "•";
+            color: #1d1004;
+            position: absolute;
+            left: 0;
+        }
+        
+        .product-gallery {
+            max-width: 460px;
+        }
+
+        .main-image {
+            margin-bottom: 18px;
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 94px;
+            height: 94px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px #00000014;
+        }
+
+        .thumbnail:hover {
+            border-color: #d7ccc8;
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px #0000001f;
+        }
+
+        .thumbnail.active {
+            border-color: #3e2723;
+            box-shadow: 0 0 0 4px #e306131f;
+        }
+    
+    </style>
+    
+</head>
+<body>
+<div class="product-container">
+    <div class="product-top">
+<!-- Sekcja zdjęcie produktu -->
+
+<!-- Galeria zdjęć - lewa kolumna -->
+<div class="product-gallery">
+
+    <!-- Duże główne zdjęcie -->
+    <div class="main-image">
+        <img id="mainPhoto" 
+             src="C:\Users\Dominika\Desktop\str\jpg\kawa\colombia\jpg_kawa_2.jpg" alt="Kawa ziarnista Colombia Supremo - przód">
+    </div>
+
+    <!-- Dwie miniaturki pod spodem -->
+    <div class="thumbnails">
+        <img src="C:\Users\Dominika\Desktop\str\jpg\kawa\colombia\jpg_kawa_2.jpg" alt="Kawa" 
+             class="thumbnail active"
+             onclick="changeImage (this)">
+
+        <img src="C:\Users\Dominika\Desktop\str\jpg\kawa\colombia\jpg_kawa_2_1.jpg" alt="Szczegół" 
+             class="thumbnail"
+             onclick="changeImage(this)">
+    </div>
+</div>
+        
+        <!-- Informacje o produkcie -->
+        <div class="product-info">
+        <!-- Najpierw marka. Następnie cały opis -->
+            <p class="brand">Colombia Supremo</p>
+            <h1 class="product-title">Kawa ziarnista Colombia Supremo</h1>
+
+            <p class="price">99,99 zł <span style="font-size:14px;">/ szt. brutto</span></p>
+            
+            <button class="btn-cart">Do koszyka</button>
+            
+ <!-- stopień intensywności, zachować kod koloru -->           
+            <h4 class="product-subtitle">Intensywność</h4>
+            <div class="icons-row">
+                <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+
+            <!-- stopień intensywności, zachować kod koloru -->
+            <h4 class="product-subtitle">Kwasowość</h4>
+            <div class="icons-row">
+                <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                 <img src="C:\Users\Dominika\Desktop\str\icon\brazowa.svg" alt="coffee_brazowa">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+                <img src="C:\Users\Dominika\Desktop\str\icon\szara.svg" alt="coffee_szara">
+
+            <div class="description">
+                <p>Colombia Supremo to kawa charakteryzująca się umiarkowaną kwasowością oraz aromatycznymi nutami kandyzowanych owoców, śliwek oraz suszonych daktyli. Słodycz owoców dopełniona jest delikatnym posmakiem gorzkiej czekolady i rodzynek.</p>
+            </div>
+
+            <ul class="features">
+                <li><strong>Rodzaj:</strong> 100% Arabika z Brazylii</li>
+                <li><strong>Profil smakowy:</strong> Kandyzowane owoce, kakao, rodzynki, daktyle</li>
+                <li><strong>Obróbka:</strong> Naturalna</li>
+                <li><strong>Waga:</strong> 250 g</li>
+            </ul>
+          </div>
+    </div>
+    <div style="margin-top: 10px;">
+        <h2>Opis produktu</h2>
+        <p>Colombia Supremo to kawa charakteryzująca się umiarkowaną kwasowością oraz aromatycznymi nutami kandyzowanych owoców, śliwek oraz suszonych daktyli. Słodycz owoców dopełniona jest delikatnym posmakiem gorzkiej czekolady i rodzynek.
+
+</p>
+    </div>
+</div>
+</body>
+</html>
