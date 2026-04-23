@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Tytuł produktu -->
+    <title>Herbata owocowa Malinowa</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .product-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px #0000001a;
+        }
+
+        .product-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brand {
+            color: #666;
+            font-size: 14px;
+        }
+        .product-title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 32px;
+            color: #e30613;
+            font-weight: bold;
+        }
+
+        .btn-cart {
+            background: #e30613;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+     
+        .btn-cart:hover { 
+            background-color: #e30613;
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 10px 25px #00000080, 0 0 20px #00000080;
+            filter: brightness(1.1);
+        }
+
+        .description {
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "•";
+            color: #1d1004;
+            position: absolute;
+            left: 0;
+        }
+        
+        .product-gallery {
+            max-width: 460px;
+        }
+
+        .main-image {
+            margin-bottom: 25px;
+            border: 1px solid #eeeeee;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .thumbnails {
+            object-fit: contain;
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            object-fit: contain;
+            width: 94px;
+            height: 94px;
+            object-fit: cover;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px #00000014;
+        }
+
+        .thumbnail:hover {
+            object-fit: contain;
+            border-color: #d7ccc8;
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px #0000001f;
+        }
+
+        .thumbnail.active {
+            border-color: #3e2723;
+            box-shadow: 0 0 0 4px #e306131f;
+        }
+    
+    </style>
+    
+</head>
+<body>
+<div class="product-container">
+    <div class="product-top">
+<!-- Sekcja zdjęcie produktu -->
+
+<!-- Galeria zdjęć - lewa kolumna -->
+<div class="product-gallery">
+
+    <!-- Duże główne zdjęcie -->
+    <div class="main-image">
+        <img id="mainPhoto" 
+             src="C:\Users\Dominika\Desktop\str\jpg\herbata\herbata liściasta\malinowa\jpg_herbata_lisc_m_1.jpg" alt="Herbata owocowa Malinowa">
+    </div>
+
+    <!-- Dwie miniaturki pod spodem -->
+    <div class="thumbnails">
+        <img src="C:\Users\Dominika\Desktop\str\jpg\herbata\herbata liściasta\malinowa\jpg_herbata_lisc_m_1.jpg" alt="herbata" 
+             class="thumbnail active"
+             onclick="changeImage (this)">
+    </div>
+</div>
+        
+        <!-- Informacje o produkcie -->
+        <div class="product-info">
+        <!-- Najpierw marka. Następnie cały opis -->
+            <p class="brand">Herbata owocowa</p>
+            <h1 class="product-title">Herbata owocowa Malinowa</h1>
+
+            <p class="price">69,99 zł <span style="font-size:14px;">/ szt. brutto</span></p>
+            
+            <button class="btn-cart">Do koszyka</button>
+            
+ <!-- stopień intensywności, zachować kod koloru -->           
+            <h4 class="product-subtitle">Aromat</h4>
+            <div class="icons-row">
+                <img src="C:\Users\Dominika\Desktop\str\icon\lisczielony.svg" alt="lisczielony">
+                <img src="C:\Users\Dominika\Desktop\str\icon\lisczielony.svg" alt="lisczielony">
+                <img src="C:\Users\Dominika\Desktop\str\icon\lisczielony.svg" alt="lisczielony">
+                <img src="C:\Users\Dominika\Desktop\str\icon\lisczielony.svg" alt="lisczielony">
+                <img src="C:\Users\Dominika\Desktop\str\icon\liscszary.svg" alt="liscszary">
+                <img src="C:\Users\Dominika\Desktop\str\icon\liscszary.svg" alt="liscszary">
+
+            <!-- stopień intensywności, zachować kod koloru -->
+            <h4 class="product-subtitle">Delikatność</h4>
+            <div class="icons-row">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+                <img src="C:\Users\Dominika\Desktop\str\icon\kwiatrozowy.svg" alt="kwiatrozowy">
+
+            <div class="description">
+                <p>Herbata Jaśminowa to zielona chińska Sencha.</p>
+            </div>
+
+            <ul class="features">
+                <li><strong>Składniki:</strong> Hibiskus, rodzynki, aronia, malina liofilizat 7%, aromat</li>
+                <li><strong>Sposób przechowywania:</strong> Przechowywać w zamkniętym opakowaniu, w suchym i chłodnym miejscu</li>
+                <li><strong>Kraj pochodzenia:</strong> Polska</li>
+                <li><strong>Waga:</strong> 100 g</li>
+            </ul>
+          </div>
+    </div>
+    <div style="margin-top: 10px;">
+        <h2>Opis produktu</h2>
+        <p>Obecność hibiskusa podkreśla delikatną kwaskowatość owoców i sprawia, że filiżanka tejże herbaty to prawdziwy zastrzyk witaminowy. Smak dopinguje także dojrzała aronia, a z kolei słodyczy nadają rodzynki. Jest to herbata, którą warto pić cały rok - aby wzmocnić odporność zwłaszcza przed sezonem jesienno-zimowym!</p>
+    </div>
+</div>
+</body>
+</html>
