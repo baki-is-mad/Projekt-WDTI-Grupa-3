@@ -813,7 +813,7 @@ footer {
 .payment-option {
     display: flex !important;
     align-items: center !important;
-    width: 100% !important; /* Zmuszamy pudełko do wypełnienia 100% kolumny */
+    width: 75% !important; /* Zmuszamy pudełko do wypełnienia 100% kolumny */
     max-width: 100px !important;
     padding: 12px 15px !important;
     background: #fff !important;
