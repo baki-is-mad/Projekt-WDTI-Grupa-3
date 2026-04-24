@@ -120,6 +120,7 @@ async function pobierzHerbateZAPI() {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     pobierzKaweZAPI();
     pobierzHerbateZAPI();
