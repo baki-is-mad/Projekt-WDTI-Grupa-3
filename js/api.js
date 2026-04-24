@@ -58,7 +58,7 @@ async function pobierzHerbateZAPI() {
     try {
         // UWAGA: Upewnij się, że podajesz dokładny link do danych! 
         // Czasami trzeba dopisać np. /api/teas na końcu.
-        const odpowiedz = await fetch("https://teaapi.netlify.app/api/teas");
+        const odpowiedz = await fetch("https://teaapi.netlify.app/api");
         
         if (!odpowiedz.ok) throw new Error('Błąd HTTP: ' + odpowiedz.status);
         
