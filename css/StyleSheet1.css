@@ -1,108 +1,3 @@
-/* RESPONSYWNOŚĆ (MEDIA QUERIES) */
-
-/* --- TABLETY I DUŻE TELEFONY (poniżej 1024px) --- */
-@media (max-width: 1024px) {
-    section {
-        margin: 2rem auto;
-        padding: 0 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .nav-links {
-        gap: 1.2rem; /* Ciaśniejsze menu */
-    }
-}
-
-/* --- TABLETY PORTRETOWE (poniżej 768px) --- */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Logo nad menu */
-        text-align: center;
-    }
-
-    .nav-links {
-        flex-wrap: wrap; /* Linki mogą przejść do nowej linii */
-        justify-content: center;
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .hero {
-        padding: 100px 20px;
-    }
-
-        .hero h1 {
-            font-size: 2.2rem;
-        }
-
-    /* Ukrywamy strzałki w sliderze - na dotyku używamy palca */
-    .nav-btn {
-        display: none;
-    }
-
-    .products-grid {
-        grid-auto-columns: 260px; /* Nieco mniejsze karty na tabletach */
-        gap: 1rem;
-    }
-}
-
-/* --- TELEFONY (poniżej 480px) --- */
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .nav-links {
-        gap: 0.8rem;
-    }
-
-    /* Ukrywamy tekst "Koszyk", zostawiamy samą ikonę z liczbą */
-    .cart-text {
-        display: none;
-    }
-
-    .cart-link {
-        font-size: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .products-grid {
-        grid-auto-columns: 85%; /* Karta zajmuje prawie cały ekran */
-        padding-left: 10px;
-    }
-
-    footer {
-        padding: 2rem 1rem;
-    }
-
-    .footer-links a {
-        display: block; /* Linki w stopce jeden pod drugim */
-        margin: 10px 0;
-    }
-}
-
-/* --- BARDZO DUŻE EKRANY (powyżej 1440px) --- */
-@media (min-width: 1440px) {
-    section {
-        max-width: 1400px; /* Szerszy layout dla monitorów 4K/wide */
-    }
-
-    .products-grid {
-        grid-auto-columns: 320px; /* Większe karty na dużym ekranie */
-    }
-}
-
-
 /* RESET I USTAWIENIA OGÓLNE */
 * {
     margin: 0;
@@ -688,12 +583,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .cart-layout {
-        grid-template-columns: 1fr;
-    }
-}
 .modal-overlay {
     display: none; /* Domyślnie ukryte */
     position: fixed;
@@ -927,11 +816,7 @@ footer {
     max-width: 1200px; /* Szerokość taka sama jak reszta strony */
     align-items: start;
 }
-@media (max-width: 900px) {
-    .cart-layout {
-        grid-template-columns: 1fr; /* Jeden pod drugim na małym ekranie */
-    }
-}
+
 /* --- WALIDACJA KONTAKTU I MODAL --- */
 #contact-submit-btn:disabled {
     background-color: #a08a80; 
@@ -1001,4 +886,43 @@ footer {
 
 .card-extra input {
     margin-bottom: 0;
+}
+
+7. RESPONSYWNOŚĆ (MEDIA QUERIES) - ZAWSZE NA KOŃCU
+========================================= */
+
+/* --- TABLETY (poniżej 1024px) --- */
+@media (max-width: 1024px) {
+    section { margin: 2rem auto; padding: 0 1.5rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .products-slider { grid-auto-columns: calc((100% - 2rem) / 2); }
+    .nav-btn { display: none; }
+}
+
+/* --- TELEFONY (poniżej 768px) --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    
+    .products-slider { grid-auto-columns: 100%; } /* 1 produkt na telefonie */
+    
+    #kontakt form { grid-template-columns: 1fr; }
+    #kontakt form > * { grid-column: 1 !important; grid-row: auto !important; }
+    
+    .cart-layout { grid-template-columns: 1fr; }
+    
+    .modal-content.checkout-content { margin: 10px; padding: 20px; }
+}
+
+/* --- MAŁE TELEFONY (poniżej 480px) --- */
+@media (max-width: 480px) {
+    .logo { font-size: 1.5rem; }
+    .cart-text { display: none; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 1.1rem; }
+}
+
+/* --- MONITORY (powyżej 1440px) --- */
+@media (min-width: 1440px) {
+    section { max-width: 1400px; }
 }
