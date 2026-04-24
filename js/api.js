@@ -1,4 +1,3 @@
-// test api
 async function pobierzKaweZAPI() {
     const kontener = document.getElementById('api-single-product');
     if (!kontener) return; 
@@ -6,7 +5,6 @@ async function pobierzKaweZAPI() {
     try {
         const odpowiedz = await fetch("https://fake-coffee-api.vercel.app/api/1");
         
-        // Zabezpieczenie z Wykładu 4: Zawsze sprawdzamy response.ok!
         if (!odpowiedz.ok) {
             throw new Error('HTTP Error ' + odpowiedz.status); 
         }
@@ -32,11 +30,9 @@ async function pobierzKaweZAPI() {
 
         kontener.innerHTML = kartaHTML;
 
-    } catch (error) {
-        // Blok catch uruchomi się, gdy wystąpi błąd HTTP (np. 500) lub błąd sieci
+    } 
+    catch (error) {
         console.error("API nie odpowiada, ładuję produkt lokalny:", error.message);
-        
-        // PLAN AWARYJNY: Podmieniamy zawartość na Twój działający produkt z dysku
         kontener.innerHTML = `
             <article class="product-card" style="max-width: 350px;">
                 <img src="jpg/kawa/brazil/jpg_kawa_3_.jpg" alt="Kawa Brazil" class="img-fluid" style="height: 250px; object-fit: cover;">
@@ -56,28 +52,18 @@ async function pobierzHerbateZAPI() {
     if (!kontener) return; 
 
     try {
-        // UWAGA: Upewnij się, że podajesz dokładny link do danych! 
-        // Czasami trzeba dopisać np. /api/teas na końcu.
         const odpowiedz = await fetch("https://corsproxy.io/?https://teaapi.netlify.app/api");
         
         if (!odpowiedz.ok) throw new Error('Błąd HTTP: ' + odpowiedz.status);
         
         const wszystkieHerbaty = await odpowiedz.json(); 
-        
-        // PODPOWIEDŹ DEBUGOWANIA: Odznacz poniższą linijkę, żeby zobaczyć w konsoli (F12) 
-        // jak dokładnie nazywają się pola (name, price, image) w tym API!
-        // console.log("Dane z API Herbaty:", wszystkieHerbaty);
-
-        // Wybieramy 3 pierwsze herbaty
         const wybraneHerbaty = wszystkieHerbaty.slice(0, 3);
         kontener.innerHTML = '';
 
         wybraneHerbaty.forEach(produkt => {
-            // Tutaj musisz dopasować 'produkt.name', 'produkt.price' do tego, co zwraca API
+
             const nazwa = produkt.name ? produkt.name.replace(/'/g, "") : "Egzotyczna Herbata";
             const cena = produkt.price ? parseFloat(produkt.price) : 19.99;
-            
-            // Jesli API nie ma zdjęć, dajemy Twoje awaryjne zdjęcie herbaty
             const zdjecie = produkt.image ? produkt.image : "jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg";
 
             const kartaHTML = `
@@ -95,19 +81,38 @@ async function pobierzHerbateZAPI() {
             kontener.insertAdjacentHTML('beforeend', kartaHTML);
         });
 
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error("Problem z API Herbat:", error.message);
-        
-        // PLAN AWARYJNY: 3 lokalne herbaty w razie awarii API
+    const awaryjneHerbaty = [
+            {
+                nazwa: "Herbata Czarna",
+                cena: 15.99,
+                zdjecie: "jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg"
+            },
+            {
+                nazwa: "Herbata Zielona",
+                cena: 16.99,
+                zdjecie: "jpg/herbata/herbata liściasta/zielona/jpg_herbata_lisc_z_1.jpg"
+            },
+            {
+                nazwa: "Earl Grey",
+                cena: 17.99,
+                zdjecie: "jpg/herbata/herbata liściasta/earlgrey/jpg_herbata_earlgrey_1.jpg"
+            }
+        ];
+
         kontener.innerHTML = '';
-        for(let i=0; i<3; i++) {
-             kontener.insertAdjacentHTML('beforeend', `
+        awaryjneHerbaty.forEach(herbata => {
+            kontener.insertAdjacentHTML('beforeend', `
                 <article class="product-card">
-                    <img src="jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg" alt="Herbata Czarna" class="img-fluid" style="height: 250px; object-fit: cover;">
+                    <img src="${herbata.zdjecie}" alt="${herbata.nazwa}" class="img-fluid" style="height: 250px; object-fit: cover;">
                     <div class="product-info">
-                        <h3>Herbata Czarna (Awaryjna)</h3>
-                        <div class="price" style="text-align: center">15,99 zł</div>
-                        <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Czarna (Awaryjna)', 15.99, 'jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg'); return false;">Do koszyka</a>
+                        <h3>${herbata.nazwa}</h3>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Zapas z naszego lokalnego magazynu.</p>
+                        <div class="price" style="text-align: center">${herbata.cena.toFixed(2).replace('.', ',')} zł</div>
+                        <a href="#" class="btn" onclick="dodajDoKoszyka('${herbata.nazwa}', ${herbata.cena}, '${herbata.zdjecie}'); return false;">Do koszyka</a>
                     </div>
                 </article>
             `);
