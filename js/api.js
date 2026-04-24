@@ -116,7 +116,7 @@ async function pobierzHerbateZAPI() {
                     </div>
                 </article>
             `);
-        }
+        });
     }
 }
 
