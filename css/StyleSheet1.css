@@ -822,13 +822,12 @@ footer {
     cursor: pointer;
     transition: 0.2s;
     box-sizing: border-box !important;
-    
 }
 
     /* Styl kółka wyboru */
     .payment-option input[type="radio"] {
-        width: 20px !important;   /* Blokujemy szerokość */
-        height: 20px !important;  /* Blokujemy wysokość */
+        width: 20px !important; /* Blokujemy szerokość */
+        height: 20px !important; /* Blokujemy wysokość */
         min-width: 20px !important;
         margin: 0 12px 0 0 !important; /* Odstęp tylko z prawej od ikony */
         flex-shrink: 0 !important; /* Zakaz ściskania kropki */
@@ -877,7 +876,6 @@ footer {
     .checkout-submit-btn:hover {
         background: #219150;
     }
-
 
 /* GŁÓWNE OKNO (MODAL) */
 .modal {
