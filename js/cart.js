@@ -266,5 +266,4 @@ document.addEventListener('DOMContentLoaded', () => {
         renderujWizualnyKoszyk();
         updateCartTotals();
     }
-    pobierzKaweZAPI();
 });
