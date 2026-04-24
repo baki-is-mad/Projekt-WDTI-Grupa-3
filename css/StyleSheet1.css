@@ -811,16 +811,16 @@ footer {
 }
 
 .payment-option {
-    display: flex;
-    align-items: center;
-    width: 100%; /* Zmuszamy pudełko do wypełnienia 100% kolumny */
-    padding: 12px 15px;
-    background: #fff;
-    border: 2px solid #eeebe6;
-    border-radius: 10px;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important; /* Zmuszamy pudełko do wypełnienia 100% kolumny */
+    padding: 12px 15px !important;
+    background: #fff !important;
+    border: 2px solid #eeebe6 !important;
+    border-radius: 10px !important;
     cursor: pointer;
     transition: 0.2s;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
     /* Styl kółka wyboru */
