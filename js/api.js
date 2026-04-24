@@ -54,7 +54,8 @@ async function pobierzHerbateZAPI() {
         
         if (!odpowiedz.ok) throw new Error('Błąd HTTP: ' + odpowiedz.status);
         
-        const wszystkieHerbaty = await odpowiedz.json(); 
+        const wszystkieHerbaty = await odpowiedz.json();
+        console.log("SUROWE DANE Z API:", wszystkieHerbaty);
         const wybraneHerbaty = wszystkieHerbaty.slice(0, 3);
         kontener.innerHTML = '';
         
