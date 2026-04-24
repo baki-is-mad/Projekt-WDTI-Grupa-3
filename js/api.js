@@ -59,6 +59,12 @@ async function pobierzHerbateZAPI() {
         const wszystkieHerbaty = await odpowiedz.json(); 
         const wybraneHerbaty = wszystkieHerbaty.slice(0, 3);
         kontener.innerHTML = '';
+        
+        const slownikOpisow = {
+            "Chakour": "Wyśmienita mieszanka zielonej herbaty z nutą mięty, idealna na orzeźwienie.",
+            "TanTan by Hamza": "Aromatyczna herbata z wyraźnymi akcentami cytrusowymi i skórką pomarańczy.",
+            "El Rahal Yellow": "Relaksujący napar o ziemistym aromacie z delikatnym dodatkiem rumianku."
+        };
 
         wybraneHerbaty.forEach(produkt => {
 
@@ -66,22 +72,23 @@ async function pobierzHerbateZAPI() {
             const cena = produkt.price ? parseFloat(produkt.price) : 19.99;
             const zdjecie = produkt.image ? produkt.image : "jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg";
 
+            const polskiOpis = slownikOpisow[nazwa] || "Wyjątkowa herbata liściasta o głębokim smaku i aromacie.";
+
             const kartaHTML = `
                 <article class="product-card">
                     <img src="${zdjecie}" alt="${nazwa}" class="img-fluid" style="height: 250px; object-fit: cover;">
                     <div class="product-info">
                         <h3>${nazwa}</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">${produkt.description ? produkt.description.substring(0, 50) + '...' : 'Świeżo sprowadzana herbata liściasta'}</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">${polskiOpis}</p>
                         <div class="price" style="text-align: center">${cena.toFixed(2).replace('.', ',')} zł</div>
                         <a href="#" class="btn" onclick="dodajDoKoszyka('${nazwa}', ${cena}, '${zdjecie}'); return false;">Do koszyka</a>
                     </div>
                 </article>
             `;
-
             kontener.insertAdjacentHTML('beforeend', kartaHTML);
         });
 
-    } 
+    }
     
     catch (error) {
         console.error("Problem z API Herbat:", error.message);
