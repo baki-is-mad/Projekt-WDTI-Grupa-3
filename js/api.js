@@ -52,7 +52,7 @@ async function pobierzHerbateZAPI() {
     if (!kontener) return; 
 
     try {
-        const odpowiedz = await fetch("https://corsproxy.io/?https://teaapi.netlify.app/api");
+        const odpowiedz = await fetch("https://tea-api-gules.vercel.app/api");
         
         if (!odpowiedz.ok) throw new Error('Błąd HTTP: ' + odpowiedz.status);
         
