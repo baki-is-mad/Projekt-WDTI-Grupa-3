@@ -21,7 +21,6 @@ async function pobierzKaweZAPI() {
                 <img src="${zdjecie}" alt="${nazwa}" class="img-fluid" style="height: 250px; object-fit: cover;">
                 <div class="product-info">
                     <h3>${nazwa}</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">${produkt.description ? produkt.description.substring(0, 50) + '...' : 'Świeżo palona kawa z importu'}</p>
                     <div class="price" style="text-align: center">${cena.toFixed(2).replace('.', ',')} zł</div>
                     <a href="#" class="btn" onclick="dodajDoKoszyka('${nazwa}', ${cena}, '${zdjecie}'); return false;">Do koszyka</a>
                 </div>
@@ -106,7 +105,6 @@ async function pobierzHerbateZAPI() {
                     <img src="${herbata.zdjecie}" alt="${herbata.nazwa}" class="img-fluid" style="height: 250px; object-fit: cover;">
                     <div class="product-info">
                         <h3>${herbata.nazwa}</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Zapas z naszego lokalnego magazynu.</p>
                         <div class="price" style="text-align: center">${herbata.cena.toFixed(2).replace('.', ',')} zł</div>
                         <a href="#" class="btn" onclick="dodajDoKoszyka('${herbata.nazwa}', ${herbata.cena}, '${herbata.zdjecie}'); return false;">Do koszyka</a>
                     </div>
