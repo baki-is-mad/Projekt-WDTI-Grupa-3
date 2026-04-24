@@ -827,10 +827,13 @@ footer {
 
     /* Styl kółka wyboru */
     .payment-option input[type="radio"] {
-        margin: 0 20px 0 0; /* Odstęp tylko z prawej strony kółka */
+        width: 20px !important;   /* Blokujemy szerokość */
+        height: 20px !important;  /* Blokujemy wysokość */
+        min-width: 20px !important;
+        margin: 0 12px 0 0 !important; /* Odstęp tylko z prawej od ikony */
+        flex-shrink: 0 !important; /* Zakaz ściskania kropki */
         cursor: pointer;
         accent-color: #5c4033;
-        flex-shrink: 0; /* Kółko nie może się zgnieść */
     }
 
     /* Napis i ikona razem */
