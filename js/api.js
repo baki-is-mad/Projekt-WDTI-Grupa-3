@@ -36,7 +36,7 @@ async function pobierzKaweZAPI() {
             <article class="product-card" style="max-width: 350px;">
                 <img src="jpg/kawa/brazil/jpg_kawa_3_.jpg" alt="Kawa Brazil" class="img-fluid" style="height: 250px; object-fit: cover;">
                 <div class="product-info">
-                    <h3>Kawa Brazil (Polecana)</h3>
+                    <h3>Kawa Brazil</h3>
                     <div class="price" style="text-align: center">29,99 zł</div>
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Kawa Brazil', 29.99, 'jpg/kawa/brazil/jpg_kawa_3_.jpg'); return false;">Do koszyka</a>
                 </div>
