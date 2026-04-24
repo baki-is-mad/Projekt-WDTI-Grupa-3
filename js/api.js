@@ -55,7 +55,6 @@ async function pobierzHerbateZAPI() {
         if (!odpowiedz.ok) throw new Error('Błąd HTTP: ' + odpowiedz.status);
         
         const wszystkieHerbaty = await odpowiedz.json();
-        console.log("SUROWE DANE Z API:", wszystkieHerbaty);
         const wybraneHerbaty = wszystkieHerbaty.slice(0, 3);
         kontener.innerHTML = '';
         
@@ -63,7 +62,7 @@ async function pobierzHerbateZAPI() {
 
             const nazwa = produkt.name ? produkt.name.replace(/'/g, "") : "Egzotyczna Herbata";
             const cena = produkt.price ? parseFloat(produkt.price) : 19.99;
-            const zdjecie = produkt.image ? produkt.image : "jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg";
+            const zdjecie = produkt.image ? produkt.image_url : "jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg";
 
             const kartaHTML = `
                 <article class="product-card">
