@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,40 +11,53 @@
 </head> 
 
 <body>
-     <header>
-            <nav>
-                <div class="logo">
-                    AromaLAB
-                    <span>Kawa &amp; Herbata</span>
-                </div>
-                <div>
-                    <ul class="nav-links">
-                        <li class="nav-links"><a class="nav-links" href="indeks.html">Strona Główna</a></li>
-                        <li class="nav-links"><a class="nav-links" href="kawa.html">Kawa</a></li>
-                        <li class="nav-links"><a class="nav-links" href="herbata.html">Herbata</a></li>
-                        <li class="nav-links"><a class="nav-links" href="akcesoria.html">Akcesoria</a></li>
-                        <li class="nav-links"><a class="nav-links" href="indeks.html#bestsellery">Bestsellery</a></li>
-                        <li class="nav-links"><a class="nav-links" href="indeks.html#promocje">Promocje</a></li>
-                        <li class="nav-links"><a class="nav-links" href="indeks.html#kontakt">Kontakt</a></li>
-                        <li class="cart-item">
-                            <a href="koszyk.html" class="cart-link">
-                                <span class="cart-text">Koszyk</span>
-                                <div class="cart-icon-wrapper">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span id="cart-count">0</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>   
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <div class="logo">
+                AromaLAB
+                <span>Kawa &amp; Herbata</span>
+            </div>
+            <div>
+                <ul class="nav-links">
+                    <li class="nav-links"><a class="nav-links" href="indeks.html">Strona Główna</a></li>
+                    <li class="nav-links"><a class="nav-links" href="kawa.html">Kawa</a></li>
+                    <li class="nav-links"><a class="nav-links" href="herbata.html">Herbata</a></li>
+                    <li class="nav-links"><a class="nav-links" href="akcesoria.html">Akcesoria</a></li>
+                    <li class="nav-links"><a class="nav-links" href="indeks.html#bestsellery">Bestsellery</a></li>
+                    <li class="nav-links"><a class="nav-links" href="indeks.html#promocje">Promocje</a></li>
+                    <li class="nav-links"><a class="nav-links" href="indeks.html#kontakt">Kontakt</a></li>
+                    <li class="cart-item">
+                        <a href="koszyk.html" class="cart-link">
+                            <span class="cart-text">Koszyk</span>
+                            <div class="cart-icon-wrapper">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count">0</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>   
+        </nav>
+    </header>
+
     <section>
         <h2>Nowości ze świata Herbaty (API)</h2>
         <div class="products-grid" id="api-tea-product">
             <p>Wczytywanie...</p>
         </div>
-        <div class="products-grid">
+
+        <section class="sort-section" style="margin-top: 40px; text-align: right;">
+            <label for="sort-select" style="font-weight: bold; color: #5c4033; margin-right: 10px;">Sortuj według:</label>
+            <select id="sort-select" style="padding: 8px 15px; border-radius: 8px; border: 2px solid #eeebe6; font-family: inherit; color: #3f2a1e; outline: none; cursor: pointer;">
+                <option value="default">Domyślnie</option>
+                <option value="alpha-asc">Alfabetycznie (A - Z)</option>
+                <option value="alpha-desc">Alfabetycznie (Z - A)</option>
+                <option value="price-asc">Cena (od najniższej)</option>
+                <option value="price-desc">Cena (od najwyższej)</option>
+            </select>
+        </section>
+
+        <div class="products-grid" id="main-products-grid" style="margin-top: 20px;">
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/biała/jpg_herbata_lisc_b_1.jpg" alt="Herbata Liściasta Biała" class="img-fluid">
                 <div class="product-info">
@@ -54,6 +66,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Biała', 15.99, 'jpg/herbata/herbata liściasta/biała/jpg_herbata_lisc_b_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
+            
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/cytrusowa/jpg_herbata_lisc_p_1.jpg" alt="Herbata Liściasta Biała" class="img-fluid">
                 <div class="product-info">
@@ -62,6 +75,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Biała', 11.99, 'jpg/herbata/herbata liściasta/cytrusowa/jpg_herbata_lisc_p_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
+            
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg" alt="Herbata Liściasta Czarna" class="img-fluid">
                 <div class="product-info">
@@ -70,8 +84,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Czarna', 15.99, 'jpg/herbata/herbata liściasta/czarna/jpg_herbata_lisc_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
-        </div>
-        <div class="products-grid">
+
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/earlgrey/jpg_herbata_earlgrey_1.jpg" alt="Herbata Liściasta Earl Grey" class="img-fluid">
                 <div class="product-info">
@@ -80,6 +93,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Earl Grey', 17.99, 'jpg/herbata/herbata liściasta/earlgrey/jpg_herbata_earlgrey_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
+            
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/malinowa/jpg_herbata_lisc_m_1.jpg" alt="Herbata Liściasta Malinowa" class="img-fluid">
                 <div class="product-info">
@@ -88,6 +102,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Malinowa', 19.99, 'jpg/herbata/herbata liściasta/malinowa/jpg_herbata_lisc_m_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
+            
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/tropikalna/jpg_herbata_lisc_t_1.jpg" alt="Herbata Liściasta Tropikalna" class="img-fluid">
                 <div class="product-info">
@@ -96,8 +111,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Tropikalna', 14.99, 'jpg/herbata/herbata liściasta/tropikalna/jpg_herbata_lisc_t_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
-        </div>
-        <div class="products-grid">
+
             <article class="product-card">
                 <img src="jpg/herbata/herbata liściasta/zielona/jpg_herbata_lisc_z_1.jpg" alt="Herbata Liściasta Zielona" class="img-fluid">
                 <div class="product-info">
@@ -106,6 +120,7 @@
                     <a href="#" class="btn" onclick="dodajDoKoszyka('Herbata Liściasta Zielona', 16.99, 'jpg/herbata/herbata liściasta/zielona/jpg_herbata_lisc_z_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
+            
             <article class="product-card">
                 <img src="jpg/herbata/matcha/jpg_herbata_matcha_1.jpg" alt="Matcha" class="img-fluid"/>
                 <div class="product-info">
@@ -116,7 +131,7 @@
             </article>
         </div>
     </section>
-    <!-- FOOTER -->
+
     <footer>
         <p><strong>AromaLAB Kawa &amp; Herbata</strong> © 2026 • Wszystkie prawa zastrzeżone</p>
         <div class="footer-links">
@@ -126,7 +141,9 @@
             <a href="#">Kontakt</a>
         </div>
     </footer>
-<script src="js/cart.js"></script>
-<script src="js/api.js"></script>  
+
+    <script src="js/cart.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/api.js"></script>  
 </body>
 </html>
