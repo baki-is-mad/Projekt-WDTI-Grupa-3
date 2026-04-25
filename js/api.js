@@ -28,7 +28,7 @@ async function pobierzKaweZAPI() {
         `;
 
         kontener.innerHTML = kartaHTML;
-
+        performSort();
     } 
     catch (error) {
         console.error("API nie odpowiada, ładuję produkt lokalny:", error.message);
@@ -42,6 +42,7 @@ async function pobierzKaweZAPI() {
                 </div>
             </article>
         `;
+        performSort();
     }
 }
 
@@ -76,6 +77,7 @@ async function pobierzHerbateZAPI() {
             `;
             kontener.insertAdjacentHTML('beforeend', kartaHTML);
         });
+        performSort();
     }
     
     catch (error) {
@@ -111,6 +113,7 @@ async function pobierzHerbateZAPI() {
                 </article>
             `);
         });
+        performSort();
     }
 }
 
