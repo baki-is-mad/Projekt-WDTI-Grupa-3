@@ -990,7 +990,52 @@ footer {
     .nav-btn {
         display: none !important;
     }
+    
+    .cart-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
 
+    /* 2. Naprawa wiersza produktu - robimy go bardziej "mobilnym" */
+    .cart-product-row {
+        flex-direction: column !important; /* Wszystko w pionie */
+        align-items: center !important;
+        text-align: center;
+        padding: 15px !important;
+    }
+
+    .cart-img {
+        margin: 0 0 15px 0 !important; /* Zdjęcie na środek */
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .cart-details {
+        margin-bottom: 15px;
+    }
+
+    /* 3. Naprawa kontrolera ilości (te przyciski - i +) */
+    .quantity-wrapper {
+        margin: 0 0 15px 0 !important; /* Usuwamy boczne marginesy, które go blokują */
+        width: fit-content;
+    }
+
+    /* 4. PRZYWRÓCENIE PODSUMOWANIA */
+    .cart-summary-box {
+        position: static !important; /* Wyłączamy "sticky", żeby nie pływało na telefonie */
+        width: 100% !important;
+        margin-top: 20px !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+        display: block !important; /* Upewniamy się, że nie jest ukryte */
+    }
+
+    .checkout-btn {
+        width: 100% !important;
+        padding: 18px !important; /* Większy przycisk, łatwiej kliknąć kciukiem */
+    }
 /* --- MAŁE TELEFONY (poniżej 480px) --- */
 @media (max-width: 480px) {
     .logo { font-size: 1.5rem; }
