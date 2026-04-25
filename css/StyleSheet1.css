@@ -129,10 +129,11 @@ nav {
    3. HERO SECTION
 ========================================= */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517953405523-5b9d8d6c3f9e?q=80&w=2070') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('jpg/kawa/kawa_tlo.jpg') center/cover no-repeat !important;
+    padding: 160px 20px;
     color: white;
     text-align: center;
-    padding: 160px 20px;
+    border-radius: 24px;
 }
 
     .hero h1 {
