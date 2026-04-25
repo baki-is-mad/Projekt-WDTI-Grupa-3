@@ -717,16 +717,15 @@ footer {
 
     /* Styl kółka wyboru */
     .payment-option input[type="radio"] {
-        width: 20px !important; /* Blokujemy szerokość */
-        height: 20px !important; /* Blokujemy wysokość */
+        width: 20px !important; 
+        height: 20px !important; 
         min-width: 20px !important;
-        margin: 0 12px 0 0 !important; /* Odstęp tylko z prawej od ikony */
-        flex-shrink: 0 !important; /* Zakaz ściskania kropki */
+        margin: 0 12px 0 0 !important; 
+        flex-shrink: 0 !important;
         cursor: pointer;
         accent-color: #5c4033;
     }
 
-    /* Napis i ikona razem */
     .payment-option span {
         display: flex;
         align-items: center;
@@ -734,17 +733,16 @@ footer {
         font-size: 0.95rem;
         color: #5c4033;
         font-weight: 400;
-        white-space: nowrap; /* Blokuje łamanie tekstu do nowej linii */
+        white-space: nowrap; 
     }
 
-    /* Stała szerokość ikony, by teksty pod sobą były równe */
     .payment-option i {
         font-size: 1.1rem;
         width: 20px;
         text-align: center;
     }
 
-    /* Efekt po wybraniu */
+
     .payment-option:has(input:checked) {
         border-color: #5c4033;
         background-color: #fcfaf7;
@@ -771,7 +769,7 @@ footer {
 /* GŁÓWNE OKNO (MODAL) */
 .modal {
     display: none; /* Ukrywamy okno na start */
-    position: fixed; /* Wyciągamy je z układu strony - teraz nie "pcha" innych elementów */
+    position: fixed;
     z-index: 2000; /* Bardzo wysoki numer, by okno było nad menu i stopką */
     left: 0;
     top: 0;
@@ -794,7 +792,6 @@ footer {
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
-/* PRZYCISK ZAMYKANIA (X) */
 .close-modal {
     position: absolute;
     right: 25px;
@@ -819,7 +816,6 @@ footer {
     align-items: start;
 }
 
-/* --- WALIDACJA KONTAKTU I MODAL --- */
 #contact-submit-btn:disabled {
     background-color: #a08a80; 
     cursor: not-allowed;
@@ -855,7 +851,6 @@ footer {
     color: #cc0000;
 }
 
-/* --- DYNAMICZNE POLA PŁATNOŚCI --- */
 .payment-details {
     background: #fff;
     padding: 15px;
@@ -890,7 +885,7 @@ footer {
     margin-bottom: 0;
 }
 
-/* 7. RESPONSYWNOŚĆ (MEDIA QUERIES)  */
+/* RESPONSYWNOŚĆ (MEDIA QUERIES)  */
 
 /* --- TABLETY (poniżej 1024px) --- */
 @media (max-width: 1024px) {
@@ -909,7 +904,6 @@ footer {
         padding: 0 !important;
     }
 
-    /* 2. HEADER */
     header {
         width: 100% !important;
         max-width: 100% !important;
@@ -924,7 +918,7 @@ footer {
         margin: 0 !important;
         padding: 10px 15px !important;
         display: flex !important;
-        flex-direction: column !important; /* Logo nad linkami */
+        flex-direction: column !important;
         align-items: center !important;
     }
 
@@ -951,7 +945,7 @@ footer {
     /* 5. SIATKA PRODUKTÓW */
     .products-grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr !important;
         grid-auto-flow: row !important;
         width: 100% !important;
         overflow: hidden !important;
