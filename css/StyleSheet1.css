@@ -948,7 +948,7 @@ footer {
     }
 
     /* 5. SIATKA PRODUKTÓW */
-    .products-grid, .products-slider {
+    .products-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important; /* Dwie kolumny */
         grid-auto-flow: row !important; /* Niech idą w dół, nie w bok */
@@ -958,10 +958,37 @@ footer {
         overflow: hidden !important;
     }
 
+    .products-slider {
+        display: grid !important;
+        grid-auto-flow: column !important; /* Produkty znów w jednej linii (poziomo) */
+        
+        /* Każda karta zajmuje 85% szerokości ekranu - dzięki temu widać kawałek następnej */
+        grid-auto-columns: 85% !important; 
+        
+        gap: 15px !important;
+        overflow-x: auto !important; /* Włączamy pasek przewijania */
+        scroll-snap-type: x mandatory !important; /* Magnetyczne przyciąganie kart */
+        
+        /* Ukrywamy pasek przewijania, by nie szpecił */
+        scrollbar-width: none; 
+        padding: 10px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .products-slider::-webkit-scrollbar {
+        display: none; /* Ukrycie paska w Chrome/Safari */
+    }
+
     .product-card {
+        scroll-snap-align: center !important; /* Karta centruje się przy przesuwaniu */
         width: 100% !important;
         max-width: none !important;
-        margin: 0 !important;
+    }
+
+    /* 2. Ukrywamy strzałki na telefonie (na dotyku tylko przeszkadzają) */
+    .nav-btn {
+        display: none !important;
     }
 
 /* --- MAŁE TELEFONY (poniżej 480px) --- */
