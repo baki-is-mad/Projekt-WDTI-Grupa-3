@@ -62,7 +62,7 @@ CSS Head-Developer, local storage implementation, projektowanie funkcjonalności
 
 ---
 
-<h2 align="center">FAQ</h2>
+<br><h2 align="center">FAQ</h2>
 
 <br>
 
