@@ -888,8 +888,7 @@ footer {
     margin-bottom: 0;
 }
 
-7. RESPONSYWNOŚĆ (MEDIA QUERIES) - ZAWSZE NA KOŃCU
-========================================= */
+/* 7. RESPONSYWNOŚĆ (MEDIA QUERIES)  */
 
 /* --- TABLETY (poniżej 1024px) --- */
 @media (max-width: 1024px) {
@@ -1029,13 +1028,76 @@ footer {
         margin-top: 20px !important;
         padding: 20px !important;
         box-sizing: border-box !important;
-        display: block !important; /* Upewniamy się, że nie jest ukryte */
+        display: block !important; 
     }
 
     .checkout-btn {
         width: 100% !important;
         padding: 18px !important; /* Większy przycisk, łatwiej kliknąć kciukiem */
     }
+
+    .modal-content.checkout-content {
+        width: 95% !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        max-height: 90vh; /* Zapobiega uciekaniu okna poza dół ekranu */
+        overflow-y: auto; /* Pozwala przewijać środek okna */
+    }
+
+    /* 2.układ z 2 kolumn na 1 kolumnę */
+    .checkout-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    /* 3. Dane dostawy */
+    .checkout-section {
+        width: 100% !important;
+    }
+
+    .checkout-section input {
+        width: 100% !important;
+        font-size: 16px !important; /* Zapobiega auto-zoomowaniu w iPhone */
+    }
+
+    /* 4. Metody płatności */
+    .payment-option {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .payment-option span {
+        font-size: 0.9rem !important;
+        white-space: normal !important; 
+    }
+
+    /* 5. Podsumowanie i Przycisk "Płacę i zamawiam" */
+    .final-summary {
+        width: 100% !important;
+        margin-top: 10px !important;
+        text-align: center;
+    }
+
+    .summary-total-line {
+        justify-content: center !important;
+        gap: 15px;
+        font-size: 1.1rem !important;
+    }
+
+    .checkout-submit-btn {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 20px 0 0 0 !important;
+        padding: 15px !important;
+        position: static !important;
+    }
+
+    .zip-city {
+        grid-template-columns: 1fr !important; /* Jeden pod drugim na bardzo wąskich ekranach */
+        gap: 10px !important;
+    }
+    
 /* --- MAŁE TELEFONY (poniżej 480px) --- */
 @media (max-width: 480px) {
     .logo { font-size: 1.5rem; }
