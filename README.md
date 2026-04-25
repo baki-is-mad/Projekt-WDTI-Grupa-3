@@ -25,7 +25,7 @@ AromaLAB, projekt obrazujący realizację przykładowej platformy oferującej mo
 ---
 
 
-<p align="center">
+<br><p align="center">
 Autorzy:
 </p>
 
