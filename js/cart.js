@@ -46,7 +46,9 @@ if (confirmBtn) {
         if (productToRemoveId) {
             const productRow = document.getElementById(productToRemoveId);
             if (productRow) {
+                const nazwaUsunietego = productRow.querySelector('h4').innerText; // Pobierz nazwę
                 productRow.remove(); 
+                showToast('Usunięto produkt z koszyka: ' + nazwaUsunietego, 'danger'); // Pokaż powiadomienie
             }
             updateCartTotals(); 
             hideModal(); 
@@ -391,7 +393,7 @@ function dodajDoKoszyka(nazwa, cena, zdjecie) {
         koszyk.push({ id: unikalneId, nazwa: nazwa, cena: cena, zdjecie: zdjecie, ilosc: 1 });
     }
     zapiszKoszyk(koszyk);
-    alert('Dodano: ' + nazwa + ' do koszyka!');
+    showToast('Dodano: ' + nazwa + ' do koszyka!', 'success');
 }
 
 function updateCartBadge() {
@@ -459,3 +461,40 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartTotals();
     }
 });
+
+function showToast(message, type = 'success') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.innerText = message;
+    
+    toast.style.padding = '15px 25px';
+    toast.style.borderRadius = '8px';
+    toast.style.fontWeight = 'bold';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    toast.style.transition = 'opacity 0.5s, transform 0.5s';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(-20px)';
+
+    if (type === 'success') {
+        toast.style.backgroundColor = '#d4edda';
+        toast.style.color = '#155724';
+    } else if (type === 'danger') {
+        toast.style.backgroundColor = '#f8d7da';
+        toast.style.color = '#721c24';
+    }
+
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+    });
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+        setTimeout(() => toast.remove(), 500); 
+    }, 5000);
+}
