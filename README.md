@@ -45,7 +45,7 @@ HTML Frontend Developer, określenie tematyki strony, dobór produktów i grafik
 
 <h3>Artur Samsel @artsams12</h3>
 
-HTML Frontend Developer, advanced layout oraz user interface implementation, wprowadzenie CSS Grid oraz Flexbox, user-interface interactions, multi-system compatibility integration, poprawki responsywności
+HTML/CSS Developer, advanced layout oraz user interface implementation, wprowadzenie CSS Grid oraz Flexbox, user-interface interactions, multi-system compatibility integration, poprawki responsywności
 
 
 <h3>Jerzy Hernik @JerzyH_Vis</h3>
@@ -55,7 +55,7 @@ JavaScript Head-Developer, walidacja formularzy w tym płatności oraz kontaktu,
 
 <h3>Michał Jasiński @mjasinski_VIS</h3>
 
-CSS Head-Developer, local storage implementation, projektowanie funkcjonalności przeprowadzania produktów do koszyka i zapisu jego zawartości, Tea API implementation, testing i naprawy integralności i zabezpieczeń
+Full-Stack Developer, local storage implementation, projektowanie funkcjonalności przeprowadzania produktów do koszyka i zapisu jego zawartości, Tea API implementation, testing i naprawy integralności i zabezpieczeń
 
 
 </div>
