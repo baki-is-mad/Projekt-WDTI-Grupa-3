@@ -34,29 +34,29 @@ Autorzy:
 <div align="center">
 
 <h3>Wiktor Bakuła @baki_is_mad</h3>
-<p>
+
 Team Leader, Project Raiser, podejmowanie decyzji finalnych, kreowanie wstępnego wyglądu projektu, tworzenie logo oraz dokumentacji, kodowanie wstępne, wprowadzenie członków do platformy Github i kierowanie działań, utworzenie repozytorium oraz serwerów w komunikatorach
-</p>
+
 
 <h3>Dominika Chołody @ddominikac-d</h3>
-<p>
+
 HTML Frontend Developer, określenie tematyki strony, dobór produktów i grafik, Style Planner, przygotowanie wstępnej struktury HTML, opracowanie podstawowych stylów CSS wyglądu strony, HTML-CSS cooperation implementation
-</p>
+
 
 <h3>Artur Samsel @artsams12</h3>
-<p>
+
 HTML Frontend Developer, advanced layout oraz user interface implementation, wprowadzenie CSS Grid oraz Flexbox, user-interface interactions, multi-system compatibility integration, poprawki responsywności
-</p>
+
 
 <h3>Jerzy Hernik @JerzyH_Vis</h3>
-<p>
+
 JavaScript Head-Developer, walidacja formularzy w tym płatności oraz kontaktu, implementacja funkcjonalności dla koszyka zakupowego, poprawki oraz testing UI oraz spójności strony, naprawy multi-system configuration / systems integration
-</p>
+
 
 <h3>Michał Jasiński @mjasinski_VIS</h3>
-<p>
+
 CSS Head-Developer, local storage implementation, projektowanie funkcjonalności przeprowadzania produktów do koszyka i zapisu jego zawartości, Tea API implementation, testing i naprawy integralności i zabezpieczeń
-</p>
+
 
 </div>
 
