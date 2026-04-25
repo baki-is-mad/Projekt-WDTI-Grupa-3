@@ -951,26 +951,22 @@ footer {
     /* 5. SIATKA PRODUKTÓW */
     .products-grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Dwie kolumny */
-        grid-auto-flow: row !important; /* Niech idą w dół, nie w bok */
+        grid-template-columns: 1fr 1fr !important;
+        grid-auto-flow: row !important;
         width: 100% !important;
-        gap: 10px !important;
-        padding: 0 !important;
         overflow: hidden !important;
+        gap: 30px;
+        padding: 20px 0;
+        justify-content: center;
     }
 
     .products-slider {
         display: grid !important;
-        grid-auto-flow: column !important; /* Produkty znów w jednej linii (poziomo) */
-        
-        /* Każda karta zajmuje 85% szerokości ekranu - dzięki temu widać kawałek następnej */
+        grid-auto-flow: column !important;
         grid-auto-columns: 85% !important; 
-        
         gap: 15px !important;
-        overflow-x: auto !important; /* Włączamy pasek przewijania */
-        scroll-snap-type: x mandatory !important; /* Magnetyczne przyciąganie kart */
-        
-        /* Ukrywamy pasek przewijania, by nie szpecił */
+        overflow-x: auto !important; 
+        scroll-snap-type: x mandatory !important;
         scrollbar-width: none; 
         padding: 10px 20px !important;
         width: 100% !important;
@@ -978,16 +974,15 @@ footer {
     }
 
     .products-slider::-webkit-scrollbar {
-        display: none; /* Ukrycie paska w Chrome/Safari */
+        display: none;
     }
 
     .product-card {
-        scroll-snap-align: center !important; /* Karta centruje się przy przesuwaniu */
+        scroll-snap-align: center !important; 
         width: 100% !important;
         max-width: none !important;
     }
 
-    /* 2. Ukrywamy strzałki na telefonie (na dotyku tylko przeszkadzają) */
     .nav-btn {
         display: none !important;
     }
@@ -999,16 +994,15 @@ footer {
         width: 100% !important;
     }
 
-    /* 2. Naprawa wiersza produktu - robimy go bardziej "mobilnym" */
     .cart-product-row {
-        flex-direction: column !important; /* Wszystko w pionie */
+        flex-direction: column !important; 
         align-items: center !important;
         text-align: center;
         padding: 15px !important;
     }
 
     .cart-img {
-        margin: 0 0 15px 0 !important; /* Zdjęcie na środek */
+        margin: 0 0 15px 0 !important; 
         width: 100px !important;
         height: 100px !important;
     }
@@ -1017,9 +1011,8 @@ footer {
         margin-bottom: 15px;
     }
 
-    /* 3. Naprawa kontrolera ilości (te przyciski - i +) */
     .quantity-wrapper {
-        margin: 0 0 15px 0 !important; /* Usuwamy boczne marginesy, które go blokują */
+        margin: 0 0 15px 0 !important; 
         width: fit-content;
     }
 
