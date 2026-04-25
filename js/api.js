@@ -33,11 +33,11 @@ async function pobierzKaweZAPI() {
         console.error("API nie odpowiada, ładuję produkt lokalny:", error.message);
         kontener.innerHTML = `
             <article class="product-card" style="max-width: 350px;">
-                <img src="jpg/kawa/brazil/jpg_kawa_3_.jpg" alt="Kawa Brazil" class="img-fluid" style="height: 250px; object-fit: cover;">
+                <img src="jpg/kawa/esspresso_palermo/Espresso_Palermo_1.jpg" alt="Espresso Palermo" class="img-fluid" style="height: 250px; object-fit: cover;">
                 <div class="product-info">
-                    <h3>Kawa Brazil</h3>
-                    <div class="price" style="text-align: center">29,99 zł</div>
-                    <a href="#" class="btn" onclick="dodajDoKoszyka('Kawa Brazil', 29.99, 'jpg/kawa/brazil/jpg_kawa_3_.jpg'); return false;">Do koszyka</a>
+                    <h3>Esspresso Palermo</h3>
+                    <div class="price" style="text-align: center">11,99 zł</div>
+                    <a href="#" class="btn" onclick="dodajDoKoszyka('Esspresso Palermo', 11.99, 'jpg/kawa/esspresso_palermo/Espresso_Palermo_1.jpg'); return false;">Do koszyka</a>
                 </div>
             </article>
         `;
