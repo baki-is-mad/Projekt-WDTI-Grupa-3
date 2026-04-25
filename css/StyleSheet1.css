@@ -939,7 +939,7 @@ footer {
     }
 
     /* 4. SEKACJE I KONTENERY */
-    section, .cart-container-main, .cart-layout {
+    section, .cart-container-main {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
