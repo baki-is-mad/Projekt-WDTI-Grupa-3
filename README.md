@@ -67,31 +67,31 @@ CSS Head-Developer, local storage implementation, projektowanie funkcjonalności
 <br>
 
 > **Czym jest ten projekt?**
-# Strona internetowa AromaLAB jest projektem prezentującym umiejętności, które w krótkim czasie i własnym zakresie poza zajęciami nabyła Grupa 3. Przedstawia ona, jak w krótkim czasie bez wcześniejszego doświadczenia członkowie byli w stanie połączyć się w stabilną grupę i utworzyć dobrą bazę strony internetowej.
+### Strona internetowa AromaLAB jest projektem prezentującym umiejętności, które w krótkim czasie i własnym zakresie poza zajęciami nabyła Grupa 3. Przedstawia ona, jak w krótkim czasie bez wcześniejszego doświadczenia członkowie byli w stanie połączyć się w stabilną grupę i utworzyć dobrą bazę strony internetowej.
 
 ---
 
 > **Jakie języki programowania są wykorzystywane w projekcie?**
-# Projekt składa się z 3 języków programowania: HTML5, CSS oraz JavaScript.
+### Projekt składa się z 3 języków programowania: HTML5, CSS oraz JavaScript.
 
 ---
 
 > **Czy strona jest dostosowana do różnych platform (PC, Mobile itp.)?**
-# Strona AromaLAB jest dostosowana do korzystania zarówno na maszynach operujących systemami Windows, macOS, Linux, jak i na urządzeniach mobilnych (iOS oraz Android).
+### Strona AromaLAB jest dostosowana do korzystania zarówno na maszynach operujących systemami Windows, macOS, Linux, jak i na urządzeniach mobilnych (iOS oraz Android).
 
 ---
 
 > **Czy strona jest prawdziwą platformą handlową, która operuje i daje możliwość zakupu produktów?**
-# AromaLAB jest projektem, który ma być wyłącznie prezentacją umiejętności — nie operuje jako prawdziwy sklep, nie ma możliwości płatności ani zamawiania produktów.
+### AromaLAB jest projektem, który ma być wyłącznie prezentacją umiejętności — nie operuje jako prawdziwy sklep, nie ma możliwości płatności ani zamawiania produktów.
 
 ---
 
 > **Produkty przedstawione na stronie są prawdziwymi produktami różnych firm, dlaczego?**
-# Produkty przedstawione na stronie są jedynie placeholderami — nie są wykorzystywane w celach zarobkowych, reklamowych ani w celu rozpowszechniania fałszywych informacji.
+### Produkty przedstawione na stronie są jedynie placeholderami — nie są wykorzystywane w celach zarobkowych, reklamowych ani w celu rozpowszechniania fałszywych informacji.
 
 ---
 
 > **Jakim cudem strona AromaLAB jest tak dobra??** 
-# W kupie siła — każdy contributor wniósł ogrom pracy i zaangażowania.
+### W kupie siła — każdy contributor wniósł ogrom pracy i zaangażowania.
 
 ---
